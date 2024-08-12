@@ -8,7 +8,7 @@ In the **public** folder of `apps/client-app`, you can manage all your static as
 
 ### Uploading Assets
 
-You can easily upload your assets to the **public** folder using the web CLI. Simply drag and drop the files into the designated area or browse your directories to select the assets you want to include. Once uploaded, these assets will be optimized automatically for better performance, including compression and conversion to web-friendly formats like WebP.
+You can easily upload your assets to the **public** folder using the web CLI. Simply browse your directories to select the assets you want to include. Once uploaded, these assets will be optimized automatically for better performance, including compression and conversion to web-friendly formats like WebP.
 
 ### Usage
 

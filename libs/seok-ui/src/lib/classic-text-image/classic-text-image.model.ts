@@ -7,6 +7,8 @@ export interface ClassicTextImageData {
   overtitlePrimary: boolean;
 
   image: ImgData;
+  width?: string;
+  height?: string;
 
   imageFirst: boolean;
 }

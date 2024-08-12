@@ -65,7 +65,7 @@ You can upload custom fonts through the WebCLI. When uploading, specify whether 
   - Main Bold
   - Main Italic
 
-Drag and drop your font files into the upload area or browse your files to select them. After uploading, your font will be optimized and ready to use in your project.
+Browse your files to select them. After uploading, your font will be optimized and ready to use in your project.
 
 ---
 
