@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.1] - 2024-08-12
+
+### Add
+
+- Width and Height to image of Classic Text Image
+
+### Fix
+
+- Call To Action component demo Label in Webcli.
+- Add more padding to default style CTA.
+- Fix Classic Text Image on mobile : text width to take 100%
+- Remove Drag and Drop on files upload
+
+
 ## [1.0.0] - 2024-08-12
 
 ### Initial Release
