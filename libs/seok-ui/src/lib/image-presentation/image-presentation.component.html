@@ -1,0 +1,55 @@
+@if (data(); as imageData) {
+  @if (SeoKitStyle === 'default') {
+    @if (imageData.priority) {
+      <img [ngSrc]="imageData.img.link"
+           [width]="imageData.width ?? 1600"
+           [height]="imageData.height ?? 900"
+           [alt]="imageData.img.alt"
+           [priority]="true"
+           [ngClass]="'object-' + (imageData.img.objectFit ?? 'none')"
+           #img (load)="cdr.detectChanges()"
+           class="mx-auto max-w-[90%] shadow-2xl rounded-lg md:rounded-2xl" [style]="'width: '+img.naturalWidth+'px; height: auto'">
+    } @else {
+      <img [ngSrc]="imageData.img.link"
+           [width]="imageData.width ?? 1600"
+           [height]="imageData.height ?? 900"
+           [alt]="imageData.img.alt"
+           [loading]="imageData.loading ?? 'auto'"
+           [priority]="false"
+           [ngClass]="'object-' + (imageData.img.objectFit ?? 'none')"
+           #img (load)="cdr.detectChanges()"
+           class="mx-auto max-w-[90%] shadow-2xl rounded-lg md:rounded-2xl" [style]="'width: '+img.naturalWidth+'px; height: auto'">
+    }
+
+    @if (imageData.img.caption !== '') {
+      <p class="mx-auto mt-2 text-sm text-neutral-600 dark:text-neutral-400 text-center max-w-[90%]">{{ imageData.img.caption }}</p>
+    }
+  }
+
+  @if (SeoKitStyle === 'yankees') {
+    @if (imageData.priority) {
+      <img [ngSrc]="imageData.img.link"
+           [width]="imageData.width ?? 1600"
+           [height]="imageData.height ?? 900"
+           [alt]="imageData.img.alt"
+           [priority]="true"
+           [ngClass]="'object-' + (imageData.img.objectFit ?? 'none')"
+           #img (load)="cdr.detectChanges()"
+           class="mx-auto yankees-cut-large max-w-[90%] shadow-2xl" [style]="'width: '+img.naturalWidth+'px; height: auto'">
+    } @else {
+      <img [ngSrc]="imageData.img.link"
+           [width]="imageData.width ?? 1600"
+           [height]="imageData.height ?? 900"
+           [alt]="imageData.img.alt"
+           [loading]="imageData.loading ?? 'auto'"
+           [priority]="false"
+           [ngClass]="'object-' + (imageData.img.objectFit ?? 'none')"
+           #img (load)="cdr.detectChanges()"
+           class="mx-auto yankees-cut-large max-w-[90%] shadow-2xl" [style]="'width: '+img.naturalWidth+'px; height: auto'">
+    }
+
+    @if (imageData.img.caption !== '') {
+      <p class="mx-auto mt-2 text-sm text-neutral-600 dark:text-neutral-400 text-center max-w-[90%]">{{ imageData.img.caption }}</p>
+    }
+  }
+}

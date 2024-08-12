@@ -1,0 +1,8 @@
+ul {
+  a:not(.active) {
+    border-color: transparent;
+    div, i {
+      color: black;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+import {SeokPageState} from "@seo-kit-boilerplate/seok-core/pages";
+import {Metatags} from "@seo-kit-boilerplate/seok-core/metatags";
+
+export const id = "<%= nameDasherized %>";
+export const url = "<%= nameDasherized %>";
+export const lang = "en";
+export const state: SeokPageState = "draft";
+export const metatags: Metatags = {
+  title: '<%= nameClassified %>'
+};

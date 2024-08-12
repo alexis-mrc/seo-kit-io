@@ -1,0 +1,55 @@
+<div class="flex flex-row gap-8 px-8 py-4 bg-white w-full rounded-lg" [ngStyle]="{'font-family': 'var(--current-font)'}">
+  <ul class="shrink-0 grow-0 flex flex-col gap-2 list-none">
+    <li>
+      <label class="cursor-pointer">
+        <input [checked]="isTitleRegular()" (input)="updateFonts(inputTitleRegular.checked, inputTitleBold.checked, inputTitleItalic.checked, inputMainRegular.checked, inputMainBold.checked, inputMainItalic.checked)" #inputTitleRegular type="checkbox" class="border-neutral-300 rounded mr-2">
+        Title Regular
+      </label>
+    </li>
+    <li>
+      <label class="cursor-pointer">
+        <input [checked]="isTitleBold()" (input)="updateFonts(inputTitleRegular.checked, inputTitleBold.checked, inputTitleItalic.checked, inputMainRegular.checked, inputMainBold.checked, inputMainItalic.checked)" #inputTitleBold type="checkbox" class="border-neutral-300 rounded mr-2">
+        Title Bold
+      </label>
+    </li>
+    <li>
+      <label class="cursor-pointer">
+        <input [checked]="isTitleItalic()" (input)="updateFonts(inputTitleRegular.checked, inputTitleBold.checked, inputTitleItalic.checked, inputMainRegular.checked, inputMainBold.checked, inputMainItalic.checked)" #inputTitleItalic type="checkbox" class="border-neutral-300 rounded mr-2">
+        Title Italic
+      </label>
+    </li>
+    <li>
+      <label class="cursor-pointer">
+        <input [checked]="isMainRegular()" (input)="updateFonts(inputTitleRegular.checked, inputTitleBold.checked, inputTitleItalic.checked, inputMainRegular.checked, inputMainBold.checked, inputMainItalic.checked)" #inputMainRegular type="checkbox" class="border-neutral-300 rounded mr-2">
+        Main Regular
+      </label>
+    </li>
+    <li>
+      <label class="cursor-pointer">
+        <input [checked]="isMainBold()" (input)="updateFonts(inputTitleRegular.checked, inputTitleBold.checked, inputTitleItalic.checked, inputMainRegular.checked, inputMainBold.checked, inputMainItalic.checked)" #inputMainBold type="checkbox" class="border-neutral-300 rounded mr-2">
+        Main Bold
+      </label>
+    </li>
+    <li>
+      <label class="cursor-pointer">
+        <input [checked]="isMainItalic()" (input)="updateFonts(inputTitleRegular.checked, inputTitleBold.checked, inputTitleItalic.checked, inputMainRegular.checked, inputMainBold.checked, inputMainItalic.checked)" #inputMainItalic type="checkbox" class="border-neutral-300 rounded mr-2">
+        Main Italic
+      </label>
+    </li>
+
+    <li>
+      <button (click)="delete()" class="cursor-pointer w-full text-center mt-2 p-2 bg-red-100 border border-solid text-red-700 border-red-700 rounded-lg">Delete</button>
+    </li>
+  </ul>
+
+  <div class="shrink grow border-l border-solid border-neutral-500 pl-8">
+    <h4 class="text-xl">An exemple title : {{ path() }}</h4>
+
+    <p class="mt-4">Size : {{ fontSizeInKb() | number:'0.1-1' }}Kb</p>
+
+    <p class="mt-4 max-w-prose">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.
+    </p>
+
+  </div>
+</div>

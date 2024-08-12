@@ -1,0 +1,151 @@
+<div class="mx-8">
+  @if (data().plans; as plans) {
+    @if (data().pricesPossibilities; as posibilities) {
+      @if (posibilities.length > 1) {
+        @if (SeoKitStyle === 'default') {
+          <div class="px-20 flex justify-center" role="group">
+            @for (posibility of posibilities; track posibility) {
+              <button type="button" (click)="currentPricePossibilitiesIndex.set($index)"
+                      class="px-4 py-2 text-sm font-medium border-t border-b border-r border-solid border-primary-400 dark:border-primary-600"
+                      [ngClass]="{'dark:bg-primary-600 bg-primary-400': currentPricePossibilitiesIndex() === $index, 'rounded-s-full border-l': $first, 'rounded-e-full': $last}">
+                {{ posibility }}
+              </button>
+            }
+          </div>
+
+          @if (data().pricesPossibilitiesSubtext; as text) {
+            <div class="mt-2 px-20 text-sm text-neutral-700 dark:text-neutral-300 text-center">{{ text }}</div>
+          }
+        } @else if (SeoKitStyle === 'yankees') {
+          <div class="px-20 flex justify-center yankees-cut" role="group">
+            @for (posibility of posibilities; track posibility) {
+              <button type="button" (click)="currentPricePossibilitiesIndex.set($index)"
+                      class="px-4 py-2 yankees-cut text-sm font-medium border-neutral-500 dark:border-neutral-400"
+                      [ngClass]="currentPricePossibilitiesIndex() === $index ? 'bg-primary-400 dark:bg-primary-600' : 'dark:bg-neutral-800 bg-neutral-200'">
+                {{ posibility }}
+              </button>
+            }
+          </div>
+
+          @if (data().pricesPossibilitiesSubtext; as text) {
+            <div class="mt-2 px-20 text-sm text-neutral-700 dark:text-neutral-300 text-center">{{ text }}</div>
+          }
+        }
+      }
+    }
+
+    @if (plans.length > 0) {
+      @if (SeoKitStyle === 'default') {
+        <div class="grid grid-cols-1 lg:grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] mx-auto mt-10 gap-20 max-w-screen-xl">
+          @for (plan of plans; track plan; let planIndex = $index) {
+            <div [ngClass]="plan.popular ? 'border-primary-400 dark:border-primary-600' : ''" class="relative overflow-hidden block bg-neutral-50/30 dark:bg-neutral-900/30 mb-6 p-6 rounded-lg md:rounded-2xl border border-solid border-neutral-300 dark:border-neutral-800">
+              @if (plan.popular) {
+                <div class="absolute top-0 left-0 py-2 font-semibold right-0 mx-auto text-center bg-primary-400 dark:bg-primary-600">{{ plan.popular }}</div>
+              }
+
+              <h2 class="mt-10 text-neutral-700 dark:text-neutral-300">{{ plan.name }}</h2>
+
+              @for (displayedPrice of plan.prices; track displayedPrice; let priceIndex = $index) {
+                @if (currentPricePossibilitiesIndex() === priceIndex) {
+                  <div class="mt-8">
+                    @if (displayedPrice.strokedValue) {
+                      <span class="font-title mr-4 text-md font-semibold line-through text-neutral-700 dark:text-neutral-300">{{ displayedPrice.strokedValue }}</span>
+                    }
+                    <span class="font-title mr-4 text-4xl font-black text-neutral-700 dark:text-neutral-200">{{ displayedPrice.value }}</span>
+                    <span class="font-title text-neutral-700 dark:text-neutral-300">{{ displayedPrice.duration }}</span>
+                  </div>
+
+                  @if (displayedPrice.offText) {
+                    <div class="mt-2 text-sm font-light text-neutral-700 dark:text-neutral-300">{{ displayedPrice.offText }}</div>
+                  }
+                }
+              }
+
+              <ul class="list-none mx-0">
+                @for (item of plan.features; track item) {
+                  <li [ngClass]="item.aviable ? 'text-neutral-700 dark:text-neutral-300' : 'text-neutral-400 dark:text-neutral-600'" class="flex flex-row gap-2">
+                    @if (item.aviable) {
+                      <svg class="shrink-0 grow-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                    } @else {
+                      <svg class="shrink-0 grow-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                    }
+                    <span>{{ item.label }}</span>
+                  </li>
+                }
+              </ul>
+
+              <div class="mx-auto mt-8 w-fit flex flex-col items-center">
+
+                @if (isExternalLink(plan.cta.link.url)) {
+                  <div [ngClass]="{'halo': plan.popular}" class="from-primary-500 via-primary-800 to-primary-500 dark:from-primary-600 dark:via-primary-300 dark:to-primary-600 hover:from-primary-800 hover:to-primary-800 hover:dark:from-primary-300 hover:dark:to-primary-300">
+                    <a class="inline-block text-center font-bold py-3 px-4 rounded-full dark:bg-primary-600 bg-primary-400" [href]="plan.cta.link.url" (click)="seokPricesService.priceClicked.next({planIndex: planIndex, priceIndex: currentPricePossibilitiesIndex()})">{{ plan.cta.link.label }}</a>
+                  </div>
+                } @else {
+                  <div [ngClass]="{'halo': plan.popular}" class="from-primary-500 via-primary-800 to-primary-500 dark:from-primary-600 dark:via-primary-300 dark:to-primary-600 hover:from-primary-800 hover:to-primary-800 hover:dark:from-primary-300 hover:dark:to-primary-300">
+                    <a class="inline-block text-center font-bold py-3 px-4 rounded-full dark:bg-primary-600 bg-primary-400" href="" (click)="$event.preventDefault();seokPricesService.priceClicked.next({planIndex: planIndex, priceIndex: currentPricePossibilitiesIndex()})">{{ plan.cta.link.label }}</a>
+                  </div>
+                }
+
+                <div class="mt-4 text-neutral-700 dark:text-neutral-300 text-sm">{{ plan.cta.incentiveSentence }}</div>
+              </div>
+
+            </div>
+          }
+        </div>
+      } @else if (SeoKitStyle === 'yankees') {
+        <div class="grid grid-cols-1 lg:grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] mx-auto mt-10 gap-20 max-w-screen-xl">
+          @for (plan of plans; track plan; let planIndex = $index) {
+            <div [ngClass]="plan.popular ? 'border-primary-400 dark:border-primary-600' : ''" class="relative overflow-hidden block bg-neutral-50/30 dark:bg-neutral-900/30 mb-6 p-6 border border-solid border-neutral-300 dark:border-neutral-800">
+              @if (plan.popular) {
+                <div class="absolute top-0 left-0 py-2 font-semibold right-0 mx-auto text-center bg-primary-400 dark:bg-primary-600">{{ plan.popular }}</div>
+              }
+
+              <h2 class="mt-10 text-neutral-700 dark:text-neutral-300">{{ plan.name }}</h2>
+
+              @for (displayedPrice of plan.prices; track displayedPrice; let priceIndex = $index) {
+                @if (currentPricePossibilitiesIndex() === priceIndex) {
+                  <div class="mt-8">
+                    @if (displayedPrice.strokedValue) {
+                      <span class="font-title mr-4 text-md font-semibold line-through text-neutral-700 dark:text-neutral-300">{{ displayedPrice.strokedValue }}</span>
+                    }
+                    <span class="font-title mr-4 text-4xl font-black text-neutral-700 dark:text-neutral-200">{{ displayedPrice.value }}</span>
+                    <span class="font-title text-neutral-700 dark:text-neutral-300">{{ displayedPrice.duration }}</span>
+                  </div>
+
+                  @if (displayedPrice.offText) {
+                    <div class="mt-2 text-sm font-light text-neutral-700 dark:text-neutral-300">{{ displayedPrice.offText }}</div>
+                  }
+                }
+              }
+
+              <ul class="list-none mx-0">
+                @for (item of plan.features; track item) {
+                  <li [ngClass]="item.aviable ? 'text-neutral-700 dark:text-neutral-300' : 'text-neutral-400 dark:text-neutral-600'" class="flex flex-row gap-2">
+                    @if (item.aviable) {
+                      <svg class="shrink-0 grow-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                    } @else {
+                      <svg class="shrink-0 grow-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                    }
+                    <span>{{ item.label }}</span>
+                  </li>
+                }
+              </ul>
+
+              <div class="mx-auto mt-8 w-fit flex flex-col items-center">
+
+                @if (isExternalLink(plan.cta.link.url)) {
+                  <a [ngClass]="plan.popular ? 'bg-primary-400 dark:bg-primary-600' : 'dark:bg-neutral-800 bg-neutral-200'" class="inline-block text-center yankees-cut yankees-cut-hover transition-colors font-bold py-3 px-4 hover:bg-primary-200 hover:dark:bg-primary-400" [href]="plan.cta.link.url" (click)="seokPricesService.priceClicked.next({planIndex: planIndex, priceIndex: currentPricePossibilitiesIndex()})">{{ plan.cta.link.label }}</a>
+                } @else {
+                  <a [ngClass]="plan.popular ? 'bg-primary-400 dark:bg-primary-600' : 'dark:bg-neutral-800 bg-neutral-200'" class="inline-block text-center yankees-cut yankees-cut-hover transition-colors font-bold py-3 px-4 hover:bg-primary-200 hover:dark:bg-primary-400" href="" (click)="$event.preventDefault();seokPricesService.priceClicked.next({planIndex: planIndex, priceIndex: currentPricePossibilitiesIndex()})">{{ plan.cta.link.label }}</a>
+                }
+
+                <div class="mt-4 text-neutral-700 dark:text-neutral-300 text-sm">{{ plan.cta.incentiveSentence }}</div>
+              </div>
+
+            </div>
+          }
+        </div>
+      }
+    }
+  }
+</div>

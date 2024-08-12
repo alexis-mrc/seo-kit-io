@@ -1,0 +1,28 @@
+<div class="flex flex-col gap-4">
+  <div class="search-result">
+    <div class="flex flex-row gap-2 items-center">
+      <img [ngSrc]="'http://localhost:4200/favicon/' + faviconUrl()" width="28" height="28" alt="Favicon" class="favicon">
+      <div class="result-info">
+        <div class="name">{{ websiteName() }}</div>
+        <div class="url">{{ websiteUrl() }}</div>
+      </div>
+    </div>
+    <div>
+      <a class="title">{{ title() }}</a>
+      <div class="snippet">
+        {{ description() }}
+      </div>
+    </div>
+  </div>
+
+  <div class="link-preview">
+    @if (image()) {
+      <img [ngSrc]="'http://localhost:4200' + image()" width="100" height="50" [alt]="title()">
+    }
+    <div class="link-preview-content">
+      <h2>{{ title() }}</h2>
+      <p>{{ description() }}</p>
+      <a [href]="websiteUrl()" target="_blank">{{ websiteUrl() }}</a>
+    </div>
+  </div>
+</div>

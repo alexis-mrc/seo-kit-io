@@ -1,0 +1,34 @@
+{
+  "generators": {
+    "set-colors": {
+      "factory": "./src/generators/set-colors/generator",
+      "schema": "./src/generators/set-colors/schema.json",
+      "description": "set-colors generator"
+    },
+    "set-fonts": {
+      "factory": "./src/generators/set-fonts/generator",
+      "schema": "./src/generators/set-fonts/schema.json",
+      "description": "set-fonts generator"
+    },
+    "set-settings": {
+      "factory": "./src/generators/set-settings/generator",
+      "schema": "./src/generators/set-settings/schema.json",
+      "description": "set-settings generator"
+    },
+    "set-home": {
+      "factory": "./src/generators/set-home/generator",
+      "schema": "./src/generators/set-home/schema.json",
+      "description": "set-home generator"
+    },
+    "add-page": {
+      "factory": "./src/generators/add-page/generator",
+      "schema": "./src/generators/add-page/schema.json",
+      "description": "add-page generator"
+    },
+    "delete-page": {
+      "factory": "./src/generators/delete-page/generator",
+      "schema": "./src/generators/delete-page/schema.json",
+      "description": "delete-page generator"
+    }
+  }
+}

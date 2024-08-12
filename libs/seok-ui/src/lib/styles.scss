@@ -1,0 +1,70 @@
+@tailwind utilities;
+
+:root {
+  --yankees-cut-size: 8px;
+  --yankees-cut-size-large: 8%;
+  --yankees-cut-multiplicator-large: 2;
+}
+
+@layer utilities {
+  .yankees-cut {
+    clip-path: polygon(var(--yankees-cut-size) 0, 100% 0%, calc(100% - var(--yankees-cut-size)) 100%, 0 100%);
+    transition: clip-path 0.3s ease-in-out;
+  }
+
+  .yankees-cut-large {
+    clip-path: polygon(0 calc(var(--yankees-cut-size-large) * var(--yankees-cut-multiplicator-large)), var(--yankees-cut-size-large) 0, 100% 0%, 100% calc(100% - (var(--yankees-cut-size-large) * var(--yankees-cut-multiplicator-large))), calc(100% - var(--yankees-cut-size-large)) 100%, 0 100%);
+    transition: clip-path 0.3s ease-in-out;
+  }
+
+  .yankees-cut-hover:hover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+
+  @property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false
+  }
+
+  @keyframes spin {
+    from {
+      --angle: 0deg;
+    }
+    to {
+      --angle: 360deg;
+    }
+  }
+
+  .halo {
+    position: relative;
+
+    a {
+      position: relative;
+      z-index: 2;
+    }
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      box-sizing: content-box;
+      height: 100%;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      z-index: 1;
+      padding: 3px;
+      @apply rounded-full;
+      background-image: conic-gradient(from var(--angle), var(--tw-gradient-from), var(--tw-gradient-to), var(--tw-gradient-stops));
+      animation: 3s spin linear infinite;
+    }
+
+    &::before {
+      filter: blur(8px);
+      opacity: 0.8;
+    }
+  }
+
+}

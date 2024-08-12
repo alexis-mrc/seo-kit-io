@@ -1,0 +1,100 @@
+{
+  "name": "webcli",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "app",
+  "sourceRoot": "apps/webcli/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "allowedCommonJsDependencies": [
+          "chroma-js",
+          "multer",
+          "sharp",
+          "@xterm/xterm",
+          "@xterm/addon-fit"
+        ],
+        "outputPath": "dist/apps/webcli",
+        "index": "apps/webcli/src/index.html",
+        "browser": "apps/webcli/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/webcli/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "apps/webcli/public"
+          }
+        ],
+        "styles": [
+          "apps/webcli/src/styles.scss",
+          "node_modules/@xterm/xterm/css/xterm.css",
+          "libs/seok-ui/src/lib/styles.scss"
+        ],
+        "scripts": [],
+        "server": "apps/webcli/src/main.server.ts",
+        "prerender": {
+          "discoverRoutes": false
+        },
+        "ssr": {
+          "entry": "apps/webcli/server.ts"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "outputHashing": "all"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "webcli:build:production"
+        },
+        "development": {
+          "buildTarget": "webcli:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "webcli:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/webcli/jest.config.ts"
+      }
+    }
+  }
+}

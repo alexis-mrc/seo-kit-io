@@ -1,0 +1,48 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom", "dom.iterable"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@seo-kit-boilerplate/seok-core/favicon": [
+        "libs/seok-core/src/lib/favicon/index.ts"
+      ],
+      "@seo-kit-boilerplate/seok-core/json-ld": [
+        "libs/seok-core/src/lib/json-ld/index.ts"
+      ],
+      "@seo-kit-boilerplate/seok-core/lang": [
+        "libs/seok-core/src/lib/lang/index.ts"
+      ],
+      "@seo-kit-boilerplate/seok-core/metatags": [
+        "libs/seok-core/src/lib/metatags/index.ts"
+      ],
+      "@seo-kit-boilerplate/seok-core/metatags/mock": [
+        "libs/seok-core/src/lib/metatags/index.mock.ts"
+      ],
+      "@seo-kit-boilerplate/seok-core/pages": [
+        "libs/seok-core/src/lib/pages/index.ts"
+      ],
+      "@seo-kit-boilerplate/seok-core/sitemap": [
+        "libs/seok-core/src/lib/sitemap/index.ts"
+      ],
+      "@seo-kit-boilerplate/seok-generated/settings": [
+        "libs/seok-generated/src/lib/settings.ts"
+      ],
+      "@seo-kit-boilerplate/seok-model": ["libs/seok-model/src/index.ts"],
+      "@seo-kit-boilerplate/seok-sdk": ["libs/seok-sdk/src/index.ts"],
+      "@seo-kit-boilerplate/seok-ui": ["libs/seok-ui/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

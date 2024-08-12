@@ -1,0 +1,39 @@
+[NX Daemon Server] - 2024-07-12T07:48:21.957Z - Started listening on: /var/folders/3s/8sz84j4n2fddhz1c9jb1q8yr0000gn/T/852e1da9eb26c23a2c38/d.sock
+[NX Daemon Server] - 2024-07-12T07:48:21.961Z - [WATCHER]: Subscribed to changes within: /Users/alexismerceron/Sites/SEO-KIT-PROJECT/seo-kit-boilerplate (native)
+[NX Daemon Server] - 2024-07-12T07:48:21.963Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-07-12T07:48:21.964Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-07-12T07:48:21.965Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-07-12T07:48:21.967Z - [REQUEST]: Responding to the client. handleGlob
+[NX Daemon Server] - 2024-07-12T07:48:21.967Z - Done responding to the client handleGlob
+[NX Daemon Server] - 2024-07-12T07:48:21.967Z - Handled GLOB. Handling time: 1. Response time: 0.
+[NX Daemon Server] - 2024-07-12T07:48:22.160Z - [REQUEST]: Responding to the client. handleHashGlob
+[NX Daemon Server] - 2024-07-12T07:48:22.160Z - Done responding to the client handleHashGlob
+[NX Daemon Server] - 2024-07-12T07:48:22.161Z - Handled HASH_GLOB. Handling time: 0. Response time: 1.
+[NX Daemon Server] - 2024-07-12T07:48:22.161Z - [REQUEST]: Responding to the client. handleHashGlob
+[NX Daemon Server] - 2024-07-12T07:48:22.162Z - Done responding to the client handleHashGlob
+[NX Daemon Server] - 2024-07-12T07:48:22.162Z - Handled HASH_GLOB. Handling time: 0. Response time: 1.
+[NX Daemon Server] - 2024-07-12T07:48:22.163Z - [REQUEST]: Responding to the client. handleHashGlob
+[NX Daemon Server] - 2024-07-12T07:48:22.163Z - Done responding to the client handleHashGlob
+[NX Daemon Server] - 2024-07-12T07:48:22.163Z - Handled HASH_GLOB. Handling time: 1. Response time: 0.
+[NX Daemon Server] - 2024-07-12T07:48:22.164Z - [REQUEST]: Responding to the client. handleHashGlob
+[NX Daemon Server] - 2024-07-12T07:48:22.164Z - Done responding to the client handleHashGlob
+[NX Daemon Server] - 2024-07-12T07:48:22.164Z - Handled HASH_GLOB. Handling time: 0. Response time: 0.
+[NX Daemon Server] - 2024-07-12T07:48:22.165Z - [REQUEST]: Responding to the client. handleHashGlob
+[NX Daemon Server] - 2024-07-12T07:48:22.165Z - Done responding to the client handleHashGlob
+[NX Daemon Server] - 2024-07-12T07:48:22.165Z - Handled HASH_GLOB. Handling time: 0. Response time: 0.
+[NX Daemon Server] - 2024-07-12T07:48:22.166Z - [REQUEST]: Responding to the client. handleHashGlob
+[NX Daemon Server] - 2024-07-12T07:48:22.166Z - Done responding to the client handleHashGlob
+[NX Daemon Server] - 2024-07-12T07:48:22.166Z - Handled HASH_GLOB. Handling time: 0. Response time: 0.
+[NX Daemon Server] - 2024-07-12T07:48:22.167Z - [REQUEST]: Responding to the client. handleHashGlob
+[NX Daemon Server] - 2024-07-12T07:48:22.168Z - Done responding to the client handleHashGlob
+[NX Daemon Server] - 2024-07-12T07:48:22.168Z - Handled HASH_GLOB. Handling time: 0. Response time: 1.
+[NX Daemon Server] - 2024-07-12T07:48:22.168Z - [REQUEST]: Responding to the client. handleHashGlob
+[NX Daemon Server] - 2024-07-12T07:48:22.168Z - Done responding to the client handleHashGlob
+[NX Daemon Server] - 2024-07-12T07:48:22.168Z - Handled HASH_GLOB. Handling time: 0. Response time: 0.
+[NX Daemon Server] - 2024-07-12T07:48:22.169Z - [REQUEST]: Responding to the client. handleGlob
+[NX Daemon Server] - 2024-07-12T07:48:22.170Z - Done responding to the client handleGlob
+[NX Daemon Server] - 2024-07-12T07:48:22.170Z - Handled GLOB. Handling time: 0. Response time: 1.
+[NX Daemon Server] - 2024-07-12T07:48:23.073Z - [REQUEST]: Responding to the client. handleNxWorkspaceFiles
+[NX Daemon Server] - 2024-07-12T07:48:23.074Z - Done responding to the client handleNxWorkspaceFiles
+[NX Daemon Server] - 2024-07-12T07:48:23.074Z - Handled GET_NX_WORKSPACE_FILES. Handling time: 1. Response time: 1.
+[NX Daemon Server] - 2024-07-12T07:48:23.242Z - Closed a connection. Number of open connections: 0

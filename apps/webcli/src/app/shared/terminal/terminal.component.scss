@@ -1,0 +1,15 @@
+:host {
+  display: block;
+}
+
+:host {
+  --terminal-background-color: #ffffff;
+  --terminal-foreground-color: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :host {
+    --terminal-background-color: #000000;
+    --terminal-foreground-color: #ffffff;
+  }
+}

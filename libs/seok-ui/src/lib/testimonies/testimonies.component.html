@@ -1,0 +1,60 @@
+@if (data(); as testomonies) {
+  @if (testomonies.length > 0) {
+      @if (SeoKitStyle === 'default' || SeoKitStyle === 'yankees') {
+        <div
+          [ngClass]="{
+           'masonry-1 max-w-screen-sm': testomonies.length === 1,
+           'masonry-2 max-w-screen-md': testomonies.length === 2,
+           'masonry-3 max-w-screen-lg': testomonies.length === 3,
+           'sm:masonry-1 md:masonry-2 lg:masonry-3 max-w-screen-lg': testomonies.length > 3,
+          }"
+          class="masonry mx-auto px-20">
+          @for (testi of testomonies; track testi) {
+            @if (testi.source) {
+              <a [ngClass]="SeoKitStyle === 'default' ? 'rounded-lg md:rounded-2xl border border-solid border-neutral-300 dark:border-neutral-800' : 'yankees-cut-large'" [attr.href]="testi.source" class="block break-inside bg-white/30 dark:bg-neutral-800/30 mb-6 p-6 hover:bg-primary-100 hover:dark:bg-primary-950">
+
+                <blockquote class="text-neutral-600 dark:text-neutral-400 text-sm whitespace-pre-wrap pb-6 border-b border-solid border-neutral-300 dark:border-neutral-800">{{ testi.quote }}</blockquote>
+
+                <div class="pt-6 flex flex-row justify-start items-start gap-4">
+                  @if (testi.photo) {
+                    <img class="rounded-full" [ngSrc]="testi.photo" width="48" height="48" [alt]="testi.name">
+                  }
+
+                  <div>
+                    <span class="text-primary-600 dark:text-primary-400">{{ testi.name }}</span>
+                    @if (testi.moreInfo) {
+                      <br>
+                      <span class="text-neutral-600 dark:text-neutral-400 text-sm">
+                     {{ testi.moreInfo }}
+                    </span>
+                    }
+                  </div>
+                </div>
+              </a>
+            } @else {
+              <div [ngClass]="SeoKitStyle === 'default' ? 'rounded-lg md:rounded-2xl border border-solid border-neutral-300 dark:border-neutral-800' : 'yankees-cut-large'" class="block break-inside bg-white/30 dark:bg-neutral-800/30 mb-6 p-6">
+
+                <blockquote class="text-neutral-600 dark:text-neutral-400 text-sm whitespace-pre-wrap pb-6 border-b border-solid border-neutral-300 dark:border-neutral-800">{{ testi.quote }}</blockquote>
+
+                <div class="pt-6 flex flex-row justify-start items-start gap-4">
+                  @if (testi.photo) {
+                    <img class="rounded-full" [ngSrc]="testi.photo" width="48" height="48" [alt]="testi.name">
+                  }
+
+                  <div>
+                    {{ testi.name }}
+                    @if (testi.moreInfo) {
+                      <br>
+                      <span class="text-neutral-600 dark:text-neutral-400 text-sm">
+                     {{ testi.moreInfo }}
+                    </span>
+                    }
+                  </div>
+                </div>
+              </div>
+            }
+          }
+        </div>
+    }
+  }
+}

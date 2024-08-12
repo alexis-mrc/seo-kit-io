@@ -1,0 +1,35 @@
+@if (SeoKitStyle === 'default') {
+  <div class="mx-8">
+    <div class="mx-auto max-w-prose px-16 pt-12 pb-16 bg-neutral-50/30 dark:bg-neutral-900/30 rounded-lg md:rounded-2xl border border-solid border-neutral-300 dark:border-neutral-800">
+
+      <p class="text-center font-semibold text-neutral-700 dark:text-neutral-300" [ngClass]="[data().overtitlePrimary ? 'text-primary-600 dark:text-primary-400' : 'text-neutral-600 dark:text-neutral-400']">{{ data().overtitle }}</p>
+      <h2 class="text-center text-balance leading-[4vw] sm:leading-[3vw] xl:leading-[35px] text-[4vw] sm:text-[4vw] md:text-[3vw] xl:text-[40px] font-bold">{{ data().title }}</h2>
+
+      <div class="mt-12">
+        @for (item of data().items; track item) {
+          <h3 class="mt-6">{{ item.question }}</h3>
+          <p class="text-neutral-600 dark:text-neutral-300">{{ item.response }}</p>
+        }
+      </div>
+    </div>
+  </div>
+} @else if (SeoKitStyle === 'yankees') {
+  <div class="mx-8 flex md:flex-row gap-20 sm:flex-col">
+    <div>
+      <p class="text-left w-fit text-pretty font-semibold px-4 yankees-cut" [ngClass]="[data().overtitlePrimary ? 'dark:bg-primary-600 bg-primary-400 text-neutral-950 dark:text-neutral-100' : 'dark:bg-neutral-100 bg-neutral-950 text-neutral-100 dark:text-neutral-950']">{{ data().overtitle }}</p>
+      <h2 class="text-left text-balance leading-[4vw] sm:leading-[3vw] xl:leading-[35px] text-[4vw] sm:text-[4vw] md:text-[3vw] xl:text-[40px] font-bold">{{ data().title }}</h2>
+    </div>
+
+
+    <div class="grow max-w-prose grid grid-cols-1 divide-y divide-solid divide-neutral-600 dark:divide-neutral-300">
+      @for (item of data().items; track item) {
+        <details [ngClass]="!$first ? 'pt-6 mt-6' : ''">
+          <summary>
+            <h3 class="inline-block pl-6">{{ item.question }}</h3>
+          </summary>
+          <p class="text-neutral-600 dark:text-neutral-300">{{ item.response }}</p>
+        </details>
+      }
+    </div>
+  </div>
+}

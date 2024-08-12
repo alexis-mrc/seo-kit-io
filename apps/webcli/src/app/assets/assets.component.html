@@ -1,0 +1,45 @@
+<h1 class="font-title text-3xl">🖼️ Assets</h1>
+
+<p class="mt-4 max-w-prose">
+  The public folder contains static assets that are publicly accessible and served by the web server. This includes files such as images and other resources that do not require server-side processing. These assets are directly accessible via a URL and are typically used for rendering the user interface.
+</p>
+
+<h2 class="font-title text-2xl mt-8">In public folder</h2>
+<ul class="flex flex-col gap-2 mt-4 list-none">
+  @if (assets().length === 0) {
+    <li class="p-2 bg-orange-100 border border-solid text-orange-700 border-orange-700 rounded-lg">No assets in public folder</li>
+  } @else {
+    @for (asset of assets(); track asset) {
+      <li class="flex justify-between items-center p-2 bg-white border border-solid text-neutral-700 border-neutral-100 rounded-lg">
+        <div class="flex items-center">
+          @if (assetsService.isImage(asset)) {
+            <img [src]="assetsService.getAssetLink(asset)" alt="{{ asset }}" class="max-h-[100px] object-cover mr-4 rounded">
+          }
+          <span>{{ asset }}</span>
+        </div>
+        <div class="flex space-x-2">
+          <button (click)="assetsService.deleteAssets(asset)" class="cursor-pointer w-full text-center p-2 bg-red-100 border border-solid text-red-700 border-red-700 rounded-lg">Delete</button>
+        </div>
+      </li>
+    }
+  }
+  <li>
+    <label
+      class="flex justify-center w-full h-32 px-4 transition bg-white border-2 border-neutral-300 border-dashed rounded-md appearance-none cursor-pointer hover:border-neutral-400 focus:outline-none">
+      <span class="flex flex-col justify-center items-center space-x-2">
+        <div class="flex items-center space-x-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-neutral-700" fill="none" viewBox="0 0 24 24"
+               stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+            </svg>
+            <span class="font-medium text-neutral-700">
+                Drop assets or
+                <span class="text-primary-700 underline">browse</span>
+            </span>
+        </div>
+      </span>
+      <input type="file" name="file_upload" multiple directory class="hidden" (change)="onAssetsSelected($event)">
+    </label>
+  </li>
+</ul>

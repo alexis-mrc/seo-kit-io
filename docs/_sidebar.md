@@ -1,0 +1,16 @@
+- [Introduction](README.md)
+- [Getting Started](en/01-getting-started)
+- [Settings](en/02-settings)
+- [Styles](en/03-styles)
+- [Components](en/04-components)
+- [Assets](en/05-assets)
+- Pages
+  - [General Overview](en/06-pages)
+  - [Landing CRO](en/07-pages-landing-cro)
+  - [Pillar](en/08-pages-pillar)
+  - [Child](en/09-pages-child)
+  - [Bonus](en/10-pages-bonus)
+- [Build and Deploy](en/11-build-and-deploy)
+- Bonus
+  - [Affiliate program](en/12-affiliate)
+  - [SEO friendly content](en/13-seo-friendly-content)

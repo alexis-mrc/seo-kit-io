@@ -1,0 +1,24 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { setJsonLd } from "@seo-kit-boilerplate/seok-core/json-ld";
+import { updateMetatags } from "@seo-kit-boilerplate/seok-core/metatags";
+import { setLang } from "@seo-kit-boilerplate/seok-core/lang";
+import { metatags, lang } from "./<%= nameDasherized %>.page"
+import { ImagePresentationComponent } from "@seo-kit-boilerplate/seok-ui";
+
+@Component({
+  selector: 'app-<%= nameDasherized %>',
+  standalone: true,
+  imports: [CommonModule, ImagePresentationComponent],
+  templateUrl: './<%= nameDasherized %>.component.html',
+  styleUrl: './<%= nameDasherized %>.component.scss',
+  host: {ngSkipHydration: 'true'},
+})
+export class <%= nameClassified %>Component {
+
+  constructor() {
+    setLang(lang);
+    setJsonLd();
+    updateMetatags(metatags);
+  }
+}

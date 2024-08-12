@@ -1,0 +1,49 @@
+@if (SeoKitStyle === 'default') {
+  <div class="mx-auto max-w-[80%]">
+    <div [ngClass]="[data().imageFirst ? 'md:flex-row' : 'md:flex-row-reverse']" class="flex flex-col-reverse justify-center mx-auto gap-12 max-w-screen-xl">
+      <div class="relative">
+        <seok-image-presentation [data]="{
+        img: data().image,
+        priority: false
+        }"></seok-image-presentation>
+      </div>
+
+      <div class="max-w-[50%] shrink-0 mx-auto flex flex-col items-left">
+        @if (data().overtitle; as over) {
+          <p class="text-left font-semibold text-neutral-700 dark:text-neutral-300" [ngClass]="[data().overtitlePrimary ? 'text-primary-600 dark:text-primary-400' : 'text-neutral-600 dark:text-neutral-400']">{{ over }}</p>
+        }
+        <h2 class="text-left text-balance leading-[5vw] sm:leading-[4vw] xl:leading-[45px] text-[5vw] sm:text-[4vw] md:text-[3vw] xl:text-[40px] font-bold">{{ data().title }}</h2>
+
+        @if (data().subtitle; as sub) {
+          <p class="text-left max-w-[35ch] text-neutral-700 dark:text-neutral-300">{{ sub }}</p>
+        }
+
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+} @else if (SeoKitStyle === 'yankees') {
+  <div class="mx-auto max-w-[80%]">
+    <div [ngClass]="[data().imageFirst ? 'md:flex-row' : 'md:flex-row-reverse']" class="flex flex-col-reverse justify-center mx-auto gap-12 max-w-screen-xl">
+      <div class="relative">
+        <seok-image-presentation [data]="{
+        img: data().image,
+        priority: false
+        }"></seok-image-presentation>
+      </div>
+
+      <div class="max-w-[50%] shrink-0 mx-auto flex flex-col items-left">
+        @if (data().overtitle; as over) {
+          <p class="text-left w-fit text-pretty font-semibold px-4 yankees-cut" [ngClass]="[data().overtitlePrimary ? 'dark:bg-primary-600 bg-primary-400 text-neutral-950 dark:text-neutral-100' : 'dark:bg-neutral-100 bg-neutral-950 text-neutral-100 dark:text-neutral-950']">{{ over }}</p>
+        }
+        <h2 class="text-left text-balance leading-[5vw] sm:leading-[4vw] xl:leading-[45px] text-[5vw] sm:text-[4vw] md:text-[3vw] xl:text-[40px] font-bold">{{ data().title }}</h2>
+
+        @if (data().subtitle; as sub) {
+          <p class="text-left max-w-[35ch] text-neutral-700 dark:text-neutral-300">{{ sub }}</p>
+        }
+
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+}

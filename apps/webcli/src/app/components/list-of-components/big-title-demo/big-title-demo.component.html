@@ -1,0 +1,33 @@
+<div class="flex justify-between items-center mt-8">
+  <h3 class="font-title text-xl">Big Title</h3>
+
+  <div class="flex rounded-lg bg-neutral-100 p-0.5">
+    <button class="flex items-center rounded-md py-[0.4375rem] pl-2 pr-2 text-sm font-semibold lg:pr-3" [ngClass]="{'active-mode-demo': showPreview()}" (click)="showPreview.set(true)">Preview</button>
+    <button class="flex items-center rounded-md py-[0.4375rem] pl-2 pr-2 text-sm font-semibold lg:pr-3" [ngClass]="{'active-mode-demo': !showPreview()}" (click)="showPreview.set(false)">Code</button>
+  </div>
+</div>
+
+
+<p class="mt-4 max-w-prose">The "Big Title" component displays a primary title, an optional overtitle, and a subtitle to highlight key messages effectively.</p>
+
+@if (showPreview()) {
+<h4 class="font-title text-lg mt-8 mb-2">Preview</h4>
+
+  <app-component-card>
+    <seok-big-title [data]="bigTitleData()"></seok-big-title>
+  </app-component-card>
+} @else {
+  <div class="flex justify-between items-center mt-8">
+    <h4 class="font-title text-lg">HTML</h4>
+    <button class="flex items-center rounded-md py-[0.4375rem] pl-2 pr-2 text-sm font-semibold lg:pr-3 active-mode-demo" (click)="copy(bigTitleHtml())">Copy</button>
+  </div>
+  <pre><code class="text-sm mt-2 rounded-lg" [highlight]="bigTitleHtml()" language="html"></code></pre>
+
+  <h4 class="font-title text-lg mt-8">Imports</h4>
+  <pre><code class="text-sm mt-2 rounded-lg" [highlight]="bigTitleImport()" language="typescript"></code></pre>
+
+  <div class="flex justify-between items-center mt-8">
+    <h4 class="font-title text-lg">Data</h4>
+    <button class="flex items-center rounded-md py-[0.4375rem] pl-2 pr-2 text-sm font-semibold lg:pr-3 active-mode-demo" (click)="copy(bigTitleTsData())">Copy</button>
+  </div><pre><code class="text-sm mt-2 rounded-lg" [highlight]="bigTitleTsData()" language="typescript"></code></pre>
+}

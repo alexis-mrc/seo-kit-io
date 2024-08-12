@@ -1,0 +1,40 @@
+<h1 class="font-title text-3xl">⚡ Components</h1>
+
+<p class="mt-4 max-w-prose">
+  Below is a list of all components available in the seok-ui library. These components can be used to build various parts of the application, providing consistent design and functionality.
+</p>
+
+<h2 class="font-title text-2xl mt-12">Global Style</h2>
+
+<p class="mt-4 max-w-prose">
+  The global style settings allow you to define and manage the overall appearance and theme of the application. By adjusting these settings, you can ensure a consistent look and feel across all components, making it easy to implement changes that affect the entire app uniformly.
+</p>
+
+<div class="flex flex-row gap-2 items-center mt-4">
+  <label for="globalStyle">Selected style</label>
+  <select (change)="settingsService.setSettings('seokGlobalStyle', globalStyle.value)" [value]="settings().seokGlobalStyle ?? 'default'" #globalStyle id="globalStyle" name="darkMode" class="cursor-pointer rounded-pill border border-solid border-neutral-300">
+    <option value="default">default</option>
+    <option value="yankees">yankees</option>
+  </select>
+</div>
+
+<h2 class="font-title text-2xl mt-12">Dark or Light mode ?</h2>
+<p class="mt-4 max-w-prose">
+  All components works with dark and light mode. Just switch the mode to discover them.
+</p>
+
+<div class="mb-[50px]" [ngClass]="{dark: darkMode() === 'dark'}">
+  @if (settings().seokGlobalStyle === 'default') {
+    <app-default-style></app-default-style>
+  } @else if (settings().seokGlobalStyle === 'yankees') {
+    <app-yankees-style></app-yankees-style>
+  }
+</div>
+
+<div class="flex flex-row gap-2 items-center mt-4 bg-neutral-50 fixed bottom-[5px] right-[5px] p-2 rounded-lg border border-solid border-neutral-500">
+  <label for="darkMode">Color Mode</label>
+  <select id="darkMode" name="darkMode" [value]="darkMode()" (change)="darkMode.set(darkModeSelect.value === 'dark' ? 'dark' : 'light')" #darkModeSelect class="cursor-pointer rounded-lg border border-solid border-neutral-300">
+    <option value="light">light</option>
+    <option value="dark">dark</option>
+  </select>
+</div>

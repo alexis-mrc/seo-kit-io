@@ -1,0 +1,25 @@
+@if (data(); as videoData) {
+  @if (SeoKitStyle === 'default') {
+    <div [ngClass]="[videoData.widthClass]"
+         class="grid place-items-center overflow-hidden mx-auto shadow-2xl rounded-lg md:rounded-2xl"
+         (click)="toggleVideo()"
+         #videoContainer>
+      @if (!videoPlaying()) {
+        <div class="bg-white dark:bg-black opacity-80 p-8 rounded-full col-[1/1] row-[1/1] z-10">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+        </div>
+      }
+    </div>
+  } @else if (SeoKitStyle === 'yankees') {
+    <div [ngClass]="[videoData.widthClass]"
+         class="grid yankees-cut-large place-items-center overflow-hidden mx-auto shadow-2xl"
+         (click)="toggleVideo()"
+         #videoContainer>
+      @if (!videoPlaying()) {
+        <div class="bg-white dark:bg-black opacity-80 p-8 rounded-full col-[1/1] row-[1/1] z-10">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+        </div>
+      }
+    </div>
+  }
+}

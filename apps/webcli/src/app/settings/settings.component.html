@@ -1,0 +1,79 @@
+<h1 class="font-title text-3xl">⚙️ Settings</h1>
+
+<p class="mt-4 max-w-prose">
+  Configure the global preferences and settings for the application.
+</p>
+
+<h2 class="font-title text-2xl mt-12">Website Information</h2>
+
+<div class="mt-4">
+  <label for="websiteName">Website Name</label>
+  <input (input)="settingsService.setSettings('seokWebsiteName', seokWebsiteName.value)" [value]="settings().seokWebsiteName ?? ''" #seokWebsiteName id="websiteName" required name="websiteName" type="text" class="invalid:ring-2 ring-red-700 block w-full mt-2 p-2 border border-solid border-neutral-300 rounded-md" placeholder="YourWebsiteName">
+</div>
+
+<div class="mt-4">
+  <label for="websiteUrl">Website URL</label>
+  <input (input)="settingsService.setSettings('seokWebsiteUrl', seokWebsiteUrl.value)" [value]="settings().seokWebsiteUrl ?? ''" #seokWebsiteUrl id="websiteUrl" required name="websiteUrl" type="url" class="invalid:ring-2 ring-red-700 block w-full mt-2 p-2 border border-solid border-neutral-300 rounded-md" placeholder="https://example.com/">
+</div>
+
+<div class="mt-4">
+  <label for="creationDate">Creation Date (YYYY-MM-DD)</label>
+  <input (input)="settingsService.setSettings('seokCreationDate', seokCreationDate.value)" [value]="settings().seokCreationDate ?? ''" #seokCreationDate id="creationDate" name="creationDate" type="text" class="block w-full mt-2 p-2 border border-solid border-neutral-300 rounded-md" placeholder="2024-07-01">
+</div>
+
+<div class="mt-4">
+  <label for="contactEmail">Contact Email</label>
+  <input (input)="settingsService.setSettings('seokContactEmail', seokContactEmail.value)" [value]="settings().seokContactEmail ?? ''" #seokContactEmail id="contactEmail" name="contactEmail" type="email" class="block w-full mt-2 p-2 border border-solid border-neutral-300 rounded-md" placeholder="abc123xyz@example.fr">
+</div>
+
+<h2 class="font-title text-2xl mt-12">Favicon information</h2>
+<div class="mt-4">
+  <label for="favicon">Favicon url</label>
+  <input (input)="settingsService.setSettings('seokFavicon', seokFavicon.value)" [value]="settings().seokFavicon ?? ''" #seokFavicon id="favicon" name="favicon" type="text" class="block w-full mt-2 p-2 border border-solid border-neutral-300 rounded-md" placeholder="favicon.png">
+  @if (errorFavicon(); as errorFavicon) {
+    @if (errorFavicon === 'not-an-assets') {
+      <p class="text-red-700 mt-1 ml-2">Favicon path doesn't match any public assets.</p>
+    } @else if (errorFavicon === 'not-an-image') {
+      <p class="text-red-700 mt-1 ml-2">Favicon is not an image.</p>
+    }
+  }
+</div>
+
+@if (errorFavicon() === '') {
+  @if (settings().seokFavicon; as url) {
+    <h3 class="font-title text-xl mt-8">Favicon preview</h3>
+    <img (load)="cdr.markForCheck()" #img [src]="assetsService.getAssetLink(url)" [alt]="url" class="max-h-[100px] object-cover mt-4 rounded">
+    <p class="mt-2">Native Width x Height : <strong>{{ img.naturalWidth }}</strong> x <strong>{{ img.naturalHeight }}</strong></p>
+  }
+}
+
+<h2 class="font-title text-2xl mt-12">Logo Information</h2>
+
+<div class="mt-4">
+  <label for="logoUrl">Logo URL</label>
+  <input (input)="settingsService.setSettings('seokLogoUrl', seokLogoUrl.value)" [value]="settings().seokLogoUrl ?? ''" #seokLogoUrl id="logoUrl" name="logoUrl" type="text" class="block w-full mt-2 p-2 border border-solid border-neutral-300 rounded-md" placeholder="favicon.png">
+  @if (errorLogo(); as errorLogo) {
+    @if (errorLogo === 'not-an-assets') {
+      <p class="text-red-700 mt-1 ml-2">Logo path doesn't match any public assets.</p>
+    } @else if (errorLogo === 'not-an-image') {
+      <p class="text-red-700 mt-1 ml-2">Logo is not an image.</p>
+    }
+  }
+</div>
+
+<div class="mt-4">
+  <label for="logoWidth">Logo Width (in px) </label> x <label for="logoHeight">Height (in px)</label>
+  <div class="flex flex-row gap-4 items-center">
+    <input (input)="settingsService.setSettings('seokLogoWidth', seokLogoWidth.value)" [value]="settings().seokLogoWidth ?? ''" #seokLogoWidth id="logoWidth" name="logoWidth" type="number" class="block w-[100px] mt-2 p-2 border border-solid border-neutral-300 rounded-md" placeholder="24">
+    <div>x</div>
+    <input (input)="settingsService.setSettings('seokLogoHeight', seokLogoHeight.value)" [value]="settings().seokLogoHeight ?? ''" #seokLogoHeight id="logoHeight" name="logoHeight" type="number" class="block w-[100px] mt-2 p-2 border border-solid border-neutral-300 rounded-md" placeholder="24">
+  </div>
+</div>
+
+@if (errorLogo() === '') {
+  @if (settings().seokLogoUrl; as url) {
+    <h3 class="font-title text-xl mt-8">Logo preview</h3>
+    <img (load)="cdr.markForCheck()" #img [width]="settings().seokLogoWidth" [height]="settings().seokLogoHeight" [src]="assetsService.getAssetLink(url)" [alt]="url" class="object-cover mt-4 rounded">
+    <p class="mt-2">Native Width x Height : <strong>{{ img.naturalWidth }}</strong> x <strong>{{ img.naturalHeight }}</strong></p>
+  }
+}

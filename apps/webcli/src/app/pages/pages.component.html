@@ -1,0 +1,97 @@
+<h1 class="font-title text-3xl">📝 Pages</h1>
+
+<p class="mt-4 max-w-prose">
+  On this page, you can easily add new pages to your application, manage their SEO settings, and control their draft or publish state.
+</p>
+
+<h2 class="font-title text-2xl mt-12">Add page</h2>
+<div class="mt-4">
+  <label for="pageId">Page Id (should match start with a letter and contains only alphanumeric, -)</label>
+  <input value="" #pageId id="pageId" type="text" class="invalid:ring-2 ring-red-700 block w-full mt-2 p-2 border border-solid border-neutral-300 rounded-md" placeholder="id of the page">
+  <button class="mt-4 bg-white shadow flex items-center rounded-md py-[0.4375rem] pl-2 pr-2 text-sm font-semibold lg:pr-3" (click)="pageId.value = addPage(pageId.value) === false ? pageId.value : ''">Add page</button>
+</div>
+
+<h2 class="font-title text-2xl mt-12">Current pages</h2>
+
+<p class="mt-4 max-w-prose">
+  If you're navigating through a large list of pages, you can quickly find what you're looking for by pressing Ctrl + F to open the search function.
+</p>
+
+<table class="mt-6 w-full table-auto border-separate border-spacing-0 border border-neutral-200 rounded-lg overflow-hidden" cdk-table [dataSource]="allPages()">
+  <ng-container cdkColumnDef="info">
+    <th cdk-header-cell *cdkHeaderCellDef class="p-4 text-left text-sm font-medium text-neutral-700"> Information </th>
+    <td cdk-cell *cdkCellDef="let row" class="w-fit p-4 border-solid border-t border-neutral-200 bg-white align-top">
+      @if (!isOpen(row.id)) {
+        <p class="min-w-[300px]">
+          {{row.id}}
+          <br>
+          <a [href]="websiteUrl() + '/' + row.url" target="_blank" class="text-sm font-semibold underline">{{ websiteUrl() + '/' + row.url }}</a>
+        </p>
+
+        <button class="mt-4 bg-primary-300 shadow flex items-center rounded-md py-[0.4375rem] pl-2 pr-2 text-sm font-semibold lg:pr-3" (click)="toggleOpen(row.id)">Show more</button>
+      } @else {
+        <p>Id : {{row.id}}</p>
+
+        <p class="mt-8">Path : {{row.filePath}}</p>
+
+        <div class="mt-8 flex flex-row gap-2 items-center">
+          <label>Lang&nbsp;:</label>
+          <input [value]="row.lang" #inputLang required name="lang" type="text" class="invalid:ring-2 ring-red-700 block w-full p-2 border border-solid border-neutral-300 rounded-md max-w-[100px]" placeholder="not defined">
+        </div>
+
+        <div class="mt-8 flex flex-row gap-2 items-center">
+          <label>Url&nbsp;:</label>
+          <input [value]="row.url" #inputUrl name="url" type="text" class="min-w-[300px] invalid:ring-2 ring-red-700 block w-full p-2 border border-solid border-neutral-300 rounded-md" placeholder="">
+        </div>
+
+        <p class="mt-8">Url in production :</p>
+        <a [href]="websiteUrl() + '/' + inputUrl.value" target="_blank" class="text-sm font-semibold underline">{{ websiteUrl() + '/' + row.url }}</a>
+
+        <div class="mt-8">
+          <select [value]="row.state" #selectState name="state" class="cursor-pointer rounded-md border border-solid border-neutral-300">
+            <option value="draft">📝 draft</option>
+            <option value="published">🚀 published</option>
+            <option value="archived">📦 archived</option>
+          </select>
+        </div>
+
+        <button
+          (click)="updatePage(row, inputLang.value, inputUrl.value, selectState.value)"
+          class="mt-6 bg-primary-300 shadow flex items-center rounded-md py-[0.4375rem] pl-2 pr-2 text-sm font-semibold lg:pr-3"
+        >
+          Update
+        </button>
+
+
+        <div class="mt-4">
+          <label for="markdownFile">Upload Markdown File to generate HTML</label>
+          <input id="markdownFile" type="file" accept=".md" class="block w-full mt-2 p-2 border border-solid border-neutral-300 rounded-md" (change)="generateHtml($event, row.filePath)">
+        </div>
+
+        <button class="mt-8 bg-red-300 shadow flex items-center rounded-md py-[0.4375rem] pl-2 pr-2 text-sm font-semibold lg:pr-3" (click)="deletePage(row)">Delete Page</button>
+      }
+    </td>
+  </ng-container>
+
+
+  <ng-container cdkColumnDef="seo">
+    <th cdk-header-cell *cdkHeaderCellDef class="p-4 text-left text-sm border-solid border-r border-l border-neutral-200 font-medium text-neutral-700"> SEO </th>
+    <td cdk-cell *cdkCellDef="let row" class="w-full p-4 bg-white border-solid border-r border-t border-l border-neutral-200 align-top">
+      @if (isOpen(row.id)) {
+        <app-metatags-form class="block w-full" [metatags]="row.metatags" (metatagsChange)="updateMetatags(row, $event)"></app-metatags-form>
+      }
+    </td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="sitemap">
+    <th cdk-header-cell *cdkHeaderCellDef class="p-4 text-left text-sm font-medium text-neutral-700"> Sitemap </th>
+    <td cdk-cell *cdkCellDef="let row" class="min-w-[250px] p-4 bg-white border-solid border-t border-neutral-200 align-top">
+      @if (isOpen(row.id)) {
+        <app-sitemap-form class="block w-full" [sitemap]="row.sitemap" (sitemapChange)="updateSitemap(row, $event)"></app-sitemap-form>
+      }
+    </td>
+  </ng-container>
+
+  <tr cdk-header-row class="bg-neutral-100" *cdkHeaderRowDef="['info', 'seo', 'sitemap']"></tr>
+  <tr cdk-row *cdkRowDef="let row; columns: ['info', 'seo', 'sitemap']"></tr>
+</table>

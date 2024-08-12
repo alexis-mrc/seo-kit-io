@@ -1,0 +1,90 @@
+<h1 class="font-title text-3xl">🎨 Styles</h1>
+
+<p class="mt-4 max-w-prose">
+  This page provides an overview of the style guidelines used throughout the web CLI. It includes information on the color mode, color schemes, and font styles applied to various components.
+</p>
+<ul class="list-disc ml-8 mt-4 max-w-prose">
+  <li>Color scheme: Dark, light, user settings mode</li>
+  <li>Color: Overview of the primary, secondary, and neutral color palettes</li>
+  <li>Font: Styles for titles and body text (regular, bold, italic)</li>
+</ul>
+
+<h2 class="font-title text-2xl mt-12">Dark mode</h2>
+<div class="flex flex-row gap-2 items-center mt-4">
+  <label for="darkMode">Dark mode</label>
+  <select (change)="colorsService.setDarkMode(selectDarkMode.value)" [value]="darkMode()" #selectDarkMode id="darkMode" name="darkMode" class="cursor-pointer rounded-pill border border-solid border-neutral-300">
+    <option value="media">User settings</option>
+    <option value="[selector, html]">Always dark</option>
+    <option value="[selector, htmlnever]">Always light</option>
+  </select>
+</div>
+
+<h2 class="font-title text-2xl mt-12">Colors</h2>
+
+@if (primaryColor(); as palette) {
+  <app-color-palette class="mt-4" [palette]="palette" label="Primary" (updatedPalette)="colorsService.setColor($event, 'primary')"></app-color-palette>
+}
+
+@if (secondaryColor(); as palette) {
+  <app-color-palette class="mt-4" [palette]="palette" label="Secondary" (updatedPalette)="colorsService.setColor($event, 'secondary')"></app-color-palette>
+}
+
+@if (neutralColor(); as palette) {
+  <app-color-palette class="mt-4" [palette]="palette" label="Neutral" (updatedPalette)="colorsService.setColor($event, 'neutral')"></app-color-palette>
+}
+
+
+
+<h2 class="font-title text-2xl mt-12">Fonts</h2>
+<p class="mt-4 max-w-prose">
+  The typography is carefully selected to ensure readability and a professional appearance. Different fonts are used for titles and body text, with variations for regular, bold, and italic styles.
+</p>
+
+<h3 class="font-title text-xl mt-8">Current fonts</h3>
+<ul class="flex flex-col gap-2 mt-4 list-none">
+  @for (font of withInfosFonts(); track font) {
+    @if (font.state === 'missing') {
+      <li class="p-2 bg-red-100 border border-solid text-red-700 border-red-700 rounded-lg">Missing font for {{ font.label }} : <code>{{ font.path }}</code></li>
+    } @else if (font.state === 'ok') {
+      <li [ngStyle]="{'font-family': '\'/client-app' + font.path + '\''}" class="p-2 bg-green-100 border border-solid text-green-700 border-green-700 rounded-lg">
+        Current font for {{ font.label }} : <code>{{ font.path }}</code>
+        <br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.
+      </li>
+    } @else {
+      <li class="p-2 bg-orange-100 border border-solid text-orange-700 border-orange-700 rounded-lg">No font for {{ font.label }} (system-ui will be used)</li>
+    }
+  }
+</ul>
+
+<h3 class="font-title text-xl mt-8">Aviable fonts</h3>
+<ul class="flex flex-col gap-2 mt-4 list-none">
+  @if (fontsAviable().length === 0) {
+    <li class="p-2 bg-orange-100 border border-solid text-orange-700 border-orange-700 rounded-lg">No aviable font</li>
+  } @else {
+    @for (font of fontsAviable(); track font) {
+      <li>
+        <app-font-display [fonts]="fontsCss()" [path]="font" (deleteFont)="deleteFont($event)" (updatedFonts)="updatedFonts($event)"></app-font-display>
+      </li>
+    }
+  }
+  <li>
+    <label
+      class="flex justify-center w-full h-32 px-4 transition bg-white border-2 border-neutral-300 border-dashed rounded-md appearance-none cursor-pointer hover:border-neutral-400 focus:outline-none">
+      <span class="flex flex-col justify-center items-center space-x-2">
+        <div class="flex items-center space-x-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-neutral-700" fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+            </svg>
+            <span class="font-medium text-neutral-700">
+                Drop fonts or
+                <span class="text-primary-700 underline">browse</span>
+            </span>
+        </div>
+      </span>
+      <input type="file" name="file_upload" multiple class="hidden" accept=".ttf,.otf,.woff,.woff2,.eot,.svg,.fon,.fnt" (change)="onFontsSelected($event)">
+    </label>
+  </li>
+</ul>

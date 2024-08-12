@@ -1,0 +1,180 @@
+<h1 class="font-title text-3xl">🚀 Deploy</h1>
+
+<h2 class="mt-4 font-title text-2xl">To firebase</h2>
+
+<details class="mt-4 p-4 rounded bg-white">
+  <summary class="font-title text-xl">
+    Why firebase?
+  </summary>
+  <p class="mt-4">Using Firebase to host a static, simple website offers several advantages:</p>
+  <ul class="mt-4 list-disc ml-8">
+    <li class="mt-2">Firebase Hosting provides robust capabilities for hosting static websites, ensuring fast and reliable performance globally with its content delivery network (CDN).</li>
+    <li class="mt-2">It simplifies the deployment process through SEO Kit, allowing easy deployment of your website using CLI commands or through automated workflows.</li>
+    <li class="mt-2">Firebase Hosting ensures security with default SSL encryption for all traffic, offering peace of mind for handling sensitive data.</li>
+    <li class="mt-2">Moreover, Firebase Hosting supports seamless integration with custom domains, enabling you to use your branded domain name effortlessly.</li>
+  </ul>
+  <p class="mt-4">In summary, Firebase Hosting is an excellent choice for hosting static websites due to its speed, reliability, security features, and support for custom domain integration, making it ideal for both personal and business use cases.</p>
+</details>
+
+
+<details class="mt-4 p-4 rounded bg-white">
+  <summary class="font-title text-xl">
+    Log in to firebase cli
+  </summary>
+  <p class="mt-4">Run the following command in your terminal to log in:</p>
+  <pre class="mt-3 p-2 block dark:bg-neutral-800 bg-neutral-200 rounded">npx firebase login</pre>
+</details>
+
+<details class="mt-4 p-4 rounded bg-white">
+  <summary class="font-title text-xl">
+    How to get the id of an existing project?
+  </summary>
+  <button class="mt-4 bg-primary-300 shadow flex items-center rounded-md py-[0.4375rem] pl-2 pr-2 text-sm font-semibold lg:pr-3" (click)="deployService.getFirebaseProjectsList()">Get projects list</button>
+  <app-terminal type="firebase-projects-list" class="mt-4"></app-terminal>
+</details>
+
+<details class="mt-4 p-4 rounded bg-white">
+  <summary class="font-title text-xl">
+    No firebase account? Create one
+  </summary>
+  <ol class="list-decimal ml-8 mt-4 max-w-prose">
+    <li>
+      <strong>Go to the Firebase Website</strong>
+      <ul class="list-disc ml-8 mt-2">
+        <li>Open your browser and go to the <a class="underline text-primary-600 dark:text-primary-300" href="https://firebase.google.com/" target="_blank">Firebase website</a>.</li>
+      </ul>
+    </li>
+    <li class="mt-3">
+      <strong>Click on "Get Started"</strong>
+      <ul class="list-disc ml-8 mt-2">
+        <li>On the Firebase homepage, click the "Get started" button to begin the sign-up process.</li>
+      </ul>
+    </li>
+    <li class="mt-3">
+      <strong>Sign in with a Google Account</strong>
+      <ul class="list-disc ml-8 mt-2">
+        <li>If you already have a Google account, enter your email and password to sign in.</li>
+        <li>If you do not have a Google account, click on "Create account" and follow the prompts to create one.</li>
+      </ul>
+    </li>
+    <li class="mt-3">
+      <strong>Accept the Terms of Service</strong>
+      <ul class="list-disc ml-8 mt-2">
+        <li>Read and accept the Firebase and Google terms of service.</li>
+      </ul>
+    </li>
+    <li class="mt-3">
+      <strong>Create a firebase project</strong>
+      <ul class="list-disc ml-8 mt-2">
+        <li>Once signed in, you will have to create Firebase project.</li>
+      </ul>
+    </li>
+  </ol>
+</details>
+
+<details class="mt-4 p-4 rounded bg-white">
+  <summary class="font-title text-xl">
+    No project? Create a firebase project
+  </summary>
+  <ol class="list-decimal ml-8 mt-4 max-w-prose">
+    <li>
+      <strong>Go to the Firebase Console</strong>
+      <ul class="list-disc ml-8 mt-2">
+        <li>Open your browser and go to the <a class="underline text-primary-600 dark:text-primary-300" href="https://console.firebase.google.com/" target="_blank">Firebase Console</a>.</li>
+      </ul>
+    </li>
+    <li class="mt-3">
+      <strong>Log in to Your Google Account</strong>
+      <ul class="list-disc ml-8 mt-2">
+        <li>Use your Google credentials to log in if you are not already logged in.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Click on "Add Project"</strong>
+      <ul class="list-disc ml-8 mt-2">
+        <li>On the Firebase Console homepage, click the "Add project" button.</li>
+      </ul>
+    </li>
+    <li class="mt-3">
+      <strong>Enter Project Details</strong>
+      <ul class="list-disc ml-8 mt-2">
+        <li>Enter a name for your project and click "Continue".</li>
+        <li>Optionally, you can edit the project ID or accept the default.</li>
+      </ul>
+    </li>
+    <li class="mt-3">
+      <strong>Refuse Google Analytics (Optional)</strong>
+      <ul class="list-disc ml-8 mt-2">
+        <li>To optimize performance, Google Analytics is not handled by Seo Kit. If you want it, you can still install it later in your project.</li>
+      </ul>
+    </li>
+    <li class="mt-3">
+      <strong>Accept the Terms</strong>
+      <ul class="list-disc ml-8 mt-2">
+        <li>Review and accept the Firebase terms and conditions.</li>
+        <li>Click "Create project" to proceed.</li>
+      </ul>
+    </li>
+    <li class="mt-3">
+      <strong>Wait for the Project to Be Created</strong>
+      <ul class="list-disc ml-8 mt-2">
+        <li>Firebase will take a few moments to create your project. Once completed, click "Continue" to proceed to your project's overview page.</li>
+      </ul>
+    </li>
+    <li class="mt-3">
+      <strong>Your Project is Ready</strong>
+      <ul class="list-disc ml-8 mt-2">
+        <li>You can now access your project's settings, add Firebase services, and start integrating Firebase into your applications.</li>
+      </ul>
+    </li>
+  </ol>
+</details>
+
+<div class="mt-4 bg-white p-4 rounded">
+  <h2 class="font-title text-2xl mt-0">Project Id</h2>
+  <p class="mt-4">Your current firebase project id:</p>
+  <input placeholder="copy paste your project id" class="block w-full mt-2 p-2 border border-neutral-300 rounded-lg bg-neutral-50 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-950 dark:border-neutral-600 dark:placeholder-neutral-400 dark:focus:ring-primary-500 dark:focus:border-primary-500" type="text" id="websiteName" (input)="deployService.setProjectId(projectId.value)" #projectId [value]="deployService.firebaseProjectId()">
+  <button class="mt-4 bg-primary-300 shadow flex items-center rounded-md py-[0.4375rem] pl-2 pr-2 text-sm font-semibold lg:pr-3" (click)="deployService.loadProjectId()">Load Project Id</button>
+</div>
+
+@if (deployService.firebaseProjectId() !== '') {
+  <details class="mt-4 p-4 rounded bg-white">
+    <summary class="font-title text-xl">
+      Deploy to preview mode
+    </summary>
+    <button class="mt-4 bg-primary-300 shadow flex items-center rounded-md py-[0.4375rem] pl-2 pr-2 text-sm font-semibold lg:pr-3" (click)="deployService.deployToFirebasePreview()">Deploy in preview</button>
+    <app-terminal type="firebase-deploy-preview" class="mt-4"></app-terminal>
+  </details>
+
+  <details class="mt-4 p-4 rounded bg-white">
+    <summary class="font-title text-xl">
+      Deploy to production
+    </summary>
+    <button class="mt-4 bg-red-300 shadow flex items-center rounded-md py-[0.4375rem] pl-2 pr-2 text-sm font-semibold lg:pr-3" (click)="deployService.deployToFirebaseProd()">Deploy to production</button>
+    <app-terminal type="firebase-deploy-prod" class="mt-4"></app-terminal>
+  </details>
+}
+
+
+<h2 class="mt-12 font-title text-2xl">To any host</h2>
+<div class="mt-4 p-4 rounded bg-white">
+  <p>Build your app, deploy generated files yourself</p>
+  <button class="mt-4 bg-primary-300 shadow flex items-center rounded-md py-[0.4375rem] pl-2 pr-2 text-sm font-semibold lg:pr-3" (click)="deployService.buildClientApp()">Build client-app</button>
+  @if (deployService.filePath(); as filePath) {
+    <p class="mt-4">Find your generated files here:</p>
+    <pre class="mt-3 p-2 block dark:bg-neutral-800 bg-neutral-200 rounded">{{ filePath }}</pre>
+  }
+  <app-terminal type="build" class="mt-4"></app-terminal>
+</div>
+
+<h2 class="font-title text-2xl mt-12">Get a custom domain</h2>
+
+<details class="mt-4 p-4 rounded bg-white">
+  <summary>Buy it from GoDaddy</summary>
+  <p class="mt-4">Coming soon</p>
+</details>
+
+<details class="mt-4 p-4 rounded bg-white">
+  <summary>Set up custom domain with Firebase</summary>
+  <p class="mt-4">Coming soon</p>
+</details>

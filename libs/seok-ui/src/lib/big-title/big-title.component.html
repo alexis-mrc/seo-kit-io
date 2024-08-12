@@ -1,0 +1,23 @@
+@if (SeoKitStyle === 'default') {
+  <div class="max-w-prose mx-auto flex flex-col items-center">
+    @if (data().overtitle; as over) {
+      <p class="text-center text-pretty font-semibold text-neutral-700 dark:text-neutral-300" [ngClass]="[data().overtitlePrimary ? 'text-primary-600 dark:text-primary-300' : 'text-neutral-600 dark:text-neutral-400']">{{ over }}</p>
+    }
+    <h2 class="text-center text-pretty leading-[7vw] sm:leading-[6vw] xl:leading-[65px] text-[7vw] sm:text-[6vw] md:text-[5vw] xl:text-[60px] font-bold">{{ data().title }}</h2>
+
+    @if (data().subtitle; as sub) {
+      <p class="text-center text-pretty max-w-[35ch] text-neutral-700 dark:text-neutral-300">{{ sub }}</p>
+    }
+  </div>
+} @else if (SeoKitStyle === 'yankees') {
+  <div class="max-w-prose mx-auto flex flex-col items-start">
+    @if (data().overtitle; as over) {
+      <p class="text-left text-pretty font-semibold px-4 yankees-cut" [ngClass]="[data().overtitlePrimary ? 'dark:bg-primary-600 bg-primary-400 text-neutral-950 dark:text-neutral-100' : 'dark:bg-neutral-100 bg-neutral-950 text-neutral-100 dark:text-neutral-950']">{{ over }}</p>
+    }
+    <h2 class="text-left text-pretty leading-[7vw] sm:leading-[6vw] xl:leading-[65px] text-[7vw] sm:text-[6vw] md:text-[5vw] xl:text-[60px] font-bold">{{ data().title }}</h2>
+
+    @if (data().subtitle; as sub) {
+      <p class="text-left text-pretty text-neutral-700 dark:text-neutral-300">{{ sub }}</p>
+    }
+  </div>
+}

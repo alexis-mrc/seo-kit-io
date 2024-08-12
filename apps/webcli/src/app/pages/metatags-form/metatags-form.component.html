@@ -1,0 +1,98 @@
+<form [formGroup]="form">
+  <!-- Title Field -->
+  <div>
+    <label for="title" class="block text-sm font-medium text-gray-700">Title:</label>
+    <input
+      required
+      id="title"
+      formControlName="title"
+      type="text"
+      placeholder="Page Title"
+      class="invalid:ring-2 ring-red-700 mt-1 block w-full px-3 py-2 border border-solid border-neutral-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
+    />
+  </div>
+
+  <!-- Description Field -->
+  <div class="mt-6">
+    <label for="description" class="block text-sm font-medium text-gray-700">Description:</label>
+    <textarea
+      rows="6"
+      id="description"
+      formControlName="description"
+      type="text"
+      placeholder="Page Description"
+      class="mt-1 block w-full px-3 py-2 border border-solid border-neutral-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
+    ></textarea>
+  </div>
+
+  <!-- Image Field -->
+  <div class="mt-6">
+    <label for="image" class="block text-sm font-medium text-gray-700">Image Absolute URL :</label>
+    <input
+      id="image"
+      formControlName="image"
+      type="text"
+      placeholder="URL of the Image"
+      class="mt-1 block w-full px-3 py-2 border border-solid border-neutral-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
+    />
+  </div>
+
+  <!-- Open Graph Section -->
+  <div class="mt-6" formGroupName="og">
+    <label class="block text-sm font-medium text-gray-700 bold">Open Graph Data:</label>
+
+    <div class="mt-4 p-4 border border-neutral-300 rounded-md shadow-sm">
+      <label for="ogType" class="block text-sm font-medium text-gray-700">OG Type:</label>
+      <input
+        id="ogType"
+        formControlName="type"
+        type="text"
+        placeholder="Open Graph Type"
+        class="mt-1 block w-full px-3 py-2 border border-solid border-neutral-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
+      />
+
+      <label for="ogSiteName" class="mt-2 block text-sm font-medium text-gray-700">OG Site Name:</label>
+      <input
+        id="ogSiteName"
+        formControlName="site_name"
+        type="text"
+        placeholder="Open Graph Site Name"
+        class="mt-1 block w-full px-3 py-2 border border-solid border-neutral-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
+      />
+    </div>
+  </div>
+
+  <!-- Twitter Section -->
+  <div class="mt-6" formGroupName="twitter">
+    <label class="block text-sm font-medium text-gray-700 bold">Twitter Data:</label>
+
+    <div class="mt-4 p-4 border border-neutral-300 rounded-md shadow-sm">
+      <label for="twitterCard" class="block text-sm font-medium text-gray-700">Twitter Card:</label>
+      <input
+        id="twitterCard"
+        formControlName="card"
+        type="text"
+        placeholder="Twitter Card Type"
+        class="mt-1 block w-full px-3 py-2 border border-solid border-neutral-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
+      />
+
+      <label for="twitterSite" class="mt-2 block text-sm font-medium text-gray-700">Twitter Site:</label>
+      <input
+        id="twitterSite"
+        formControlName="site"
+        type="text"
+        placeholder="Twitter Site"
+        class="mt-1 block w-full px-3 py-2 border border-solid border-neutral-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
+      />
+
+      <label for="twitterCreator" class="mt-2 block text-sm font-medium text-gray-700">Twitter Creator:</label>
+      <input
+        id="twitterCreator"
+        formControlName="creator"
+        type="text"
+        placeholder="Twitter Creator"
+        class="mt-1 block w-full px-3 py-2 border border-solid border-neutral-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
+      />
+    </div>
+  </div>
+</form>

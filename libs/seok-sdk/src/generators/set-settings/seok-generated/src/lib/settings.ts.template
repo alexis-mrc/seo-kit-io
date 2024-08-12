@@ -1,0 +1,11 @@
+import {SeoKitStyle} from "@seo-kit-boilerplate/seok-ui";
+
+export const seokWebsiteName = '<%- websiteName %>';
+export const seokWebsiteUrl = '<%- websiteUrl %>';
+export const seokCreationDate = '<%- creationDate %>';
+export const seokContactEmail = '<%- contactEmail %>';
+export const seokFavicon = '<%- faviconUrl %>';
+export const seokLogoUrl = '<%- logoUrl %>';
+export const seokLogoWidth = '<%- logoWidth %>';
+export const seokLogoHeight = '<%- logoHeight %>';
+export const seokGlobalStyle: SeoKitStyle = '<%- seoKitStyle %>';

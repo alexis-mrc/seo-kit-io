@@ -1,0 +1,17 @@
+<div class="px-8 py-4 bg-white w-fit rounded-lg">
+  <h3 class="font-title text-xl">{{ label() }}</h3>
+
+  <label class="cursor-pointer focus-within:ring-2 focus-within:ring-primary-500 flex flex-row w-fit items-center gap-4 px-1 rounded-pill border border-solid border-neutral-300 bg-neutral-50">
+    <label class="cursor-pointer block w-[32px] h-[32px] rounded-full pointer-events-none" [ngStyle]="{backgroundColor: computedSelectedColor()}"><input class="opacity-0 rounded-full w-[32px] h-[32px]" type="color" #colorInput [value]="selectedColor()" (input)="setSelectedColor(colorInput.value)"></label>
+    <input class="border-none bg-transparent focus:ring-0" type="text" [value]="selectedColor()" #textInput (input)="setSelectedColor(textInput.value)">
+  </label>
+
+  <div class="flex flex-row flex-wrap gap-2 py-4">
+    @for (c of paletteToArray(palette()); track $index) {
+      <div class="rounded-lg flex flex-col justify-center align-bottom gap-1" [ngClass]="[c.hueHexa === selectedColor() ? 'outline-4 outline' : 'outline-0']" [ngStyle]="{ width: '80px', height: '80px', 'background-color': c.hueHexa, outlineColor: c.hueHexa }">
+        <div class="text-center text-sm" [style]="{color: c.reverseHue}">{{ c.hueNumber}}</div>
+        <div class="text-center text-sm" [style]="{color: c.reverseHue}">{{ c.hueHexa }}</div>
+      </div>
+    }
+  </div>
+</div>

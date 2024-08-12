@@ -1,0 +1,78 @@
+.search-result {
+  font-family: Arial, sans-serif;
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.favicon {
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+.search-result .title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1a0dab;
+  text-decoration: none;
+}
+.search-result .url {
+  font-size: 14px;
+  color: #545454;
+}
+.search-result .name {
+  font-weight: bold;
+  font-size: 14px;
+  color: #545454;
+}
+
+.search-result .snippet {
+  font-size: 14px;
+  color: #545454;
+}
+.search-result .additional-link {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #1a0dab;
+  text-decoration: none;
+}
+
+.link-preview {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+}
+.link-preview img {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.link-preview-content {
+  padding: 15px;
+  flex: 1;
+}
+.link-preview-content h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: #333;
+}
+.link-preview-content p {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: #666;
+}
+.link-preview-content a {
+  text-decoration: none;
+  color: #1da1f2; /* Twitter blue */
+  font-weight: bold;
+}

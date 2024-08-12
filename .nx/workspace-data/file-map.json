@@ -1,0 +1,1778 @@
+{
+  "version": "6.0",
+  "nxVersion": "19.4.2",
+  "deps": {
+    "@angular/animations": "~18.1.0",
+    "@angular/common": "~18.1.0",
+    "@angular/compiler": "~18.1.0",
+    "@angular/core": "~18.1.0",
+    "@angular/forms": "~18.1.0",
+    "@angular/platform-browser": "~18.1.0",
+    "@angular/platform-browser-dynamic": "~18.1.0",
+    "@angular/platform-server": "~18.1.0",
+    "@angular/router": "~18.1.0",
+    "@angular/ssr": "~18.1.0",
+    "@nx/angular": "19.4.2",
+    "@nx/devkit": "19.4.2",
+    "@xterm/addon-fit": "^0.10.0",
+    "@xterm/xterm": "^5.5.0",
+    "axios": "^1.6.0",
+    "chroma-js": "^2.4.2",
+    "express": "~4.18.2",
+    "firebase-tools": "^13.12.0",
+    "multer": "^1.4.5-lts.1",
+    "rxjs": "~7.8.0",
+    "schema-dts": "^1.1.2",
+    "sharp": "^0.33.4",
+    "sharp-multer": "^0.3.3",
+    "tsconfig-paths": "^4.2.0",
+    "tslib": "^2.3.0",
+    "ws": "^8.17.1",
+    "xmlbuilder": "^15.1.1",
+    "zone.js": "~0.14.3",
+    "@angular-devkit/build-angular": "~18.1.0",
+    "@angular-devkit/core": "~18.1.0",
+    "@angular-devkit/schematics": "~18.1.0",
+    "@angular-eslint/eslint-plugin": "18.1.0",
+    "@angular-eslint/eslint-plugin-template": "18.1.0",
+    "@angular-eslint/template-parser": "18.1.0",
+    "@angular/cli": "~18.1.0",
+    "@angular/compiler-cli": "~18.1.0",
+    "@angular/language-service": "~18.1.0",
+    "@nx/esbuild": "19.4.2",
+    "@nx/eslint": "19.4.2",
+    "@nx/eslint-plugin": "19.4.2",
+    "@nx/jest": "19.4.2",
+    "@nx/js": "19.4.2",
+    "@nx/plugin": "19.4.2",
+    "@nx/workspace": "19.4.2",
+    "@schematics/angular": "~18.1.0",
+    "@swc-node/register": "1.9.2",
+    "@swc/cli": "~0.3.12",
+    "@swc/core": "1.5.7",
+    "@swc/helpers": "0.5.11",
+    "@types/chroma-js": "^2.4.4",
+    "@types/express": "4.17.14",
+    "@types/jest": "^29.4.0",
+    "@types/multer": "^1.4.11",
+    "@types/node": "18.16.9",
+    "@typescript-eslint/eslint-plugin": "^7.3.0",
+    "@typescript-eslint/parser": "^7.3.0",
+    "autoprefixer": "^10.4.0",
+    "esbuild": "^0.19.2",
+    "eslint": "~8.57.0",
+    "eslint-config-prettier": "^9.0.0",
+    "jest": "^29.4.1",
+    "jest-environment-jsdom": "^29.4.1",
+    "jest-environment-node": "^29.4.1",
+    "jest-preset-angular": "~14.1.0",
+    "nx": "19.4.2",
+    "postcss": "^8.4.5",
+    "prettier": "^2.6.2",
+    "tailwindcss": "^3.0.2",
+    "ts-jest": "^29.1.0",
+    "ts-node": "10.9.1",
+    "typescript": "~5.4.2"
+  },
+  "pathMappings": {
+    "@seo-kit-boilerplate/seok-core/json-ld": [
+      "libs/seok-core/src/lib/json-ld/index.ts"
+    ],
+    "@seo-kit-boilerplate/seok-core/metatags": [
+      "libs/seok-core/src/lib/metatags/index.ts"
+    ],
+    "@seo-kit-boilerplate/seok-core/metatags/mock": [
+      "libs/seok-core/src/lib/metatags/index.mock.ts"
+    ],
+    "@seo-kit-boilerplate/seok-core/pages": [
+      "libs/seok-core/src/lib/pages/index.mock.ts"
+    ],
+    "@seo-kit-boilerplate/seok-core/sitemap": [
+      "libs/seok-core/src/lib/sitemap/index.ts"
+    ],
+    "@seo-kit-boilerplate/seok-generated/favicon": [
+      "libs/seok-generated/src/lib/favicon.ts"
+    ],
+    "@seo-kit-boilerplate/seok-generated/global": [
+      "libs/seok-generated/src/lib/global.ts"
+    ],
+    "@seo-kit-boilerplate/seok-generated/logo": [
+      "libs/seok-generated/src/lib/logo.ts"
+    ],
+    "@seo-kit-boilerplate/seok-generated/styles": [
+      "libs/seok-generated/src/lib/styles/styles.ts"
+    ],
+    "@seo-kit-boilerplate/seok-model": [
+      "libs/seok-model/src/index.ts"
+    ],
+    "@seo-kit-boilerplate/seok-sdk": [
+      "libs/seok-sdk/src/index.ts"
+    ],
+    "@seo-kit-boilerplate/seok-ui": [
+      "libs/seok-ui/src/index.ts"
+    ],
+    "@seo-kit-boilerplate/sitemap": [
+      "scripts/sitemap/src/index.ts"
+    ]
+  },
+  "nxJsonPlugins": [
+    {
+      "name": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "eslint:lint",
+        "extensions": [
+          "ts",
+          "tsx",
+          "js",
+          "jsx",
+          "html",
+          "vue"
+        ]
+      }
+    }
+  ],
+  "fileMap": {
+    "projectFileMap": {
+      "webcli": [
+        {
+          "file": "apps/webcli/.eslintrc.json",
+          "hash": "3322449398258820698"
+        },
+        {
+          "file": "apps/webcli/jest.config.ts",
+          "hash": "11097306812384960557"
+        },
+        {
+          "file": "apps/webcli/project.json",
+          "hash": "6877685118592660740"
+        },
+        {
+          "file": "apps/webcli/public/logo-seo-kit.svg",
+          "hash": "13335807490525562914"
+        },
+        {
+          "file": "apps/webcli/server.ts",
+          "hash": "8086175766969307244",
+          "deps": [
+            "npm:express"
+          ]
+        },
+        {
+          "file": "apps/webcli/src/app/app.component.html",
+          "hash": "600141792016180318"
+        },
+        {
+          "file": "apps/webcli/src/app/app.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/webcli/src/app/app.component.spec.ts",
+          "hash": "17501867335647095984"
+        },
+        {
+          "file": "apps/webcli/src/app/app.component.ts",
+          "hash": "3000423022224663325"
+        },
+        {
+          "file": "apps/webcli/src/app/app.config.server.ts",
+          "hash": "472700109066692288"
+        },
+        {
+          "file": "apps/webcli/src/app/app.config.ts",
+          "hash": "2958330198811694491"
+        },
+        {
+          "file": "apps/webcli/src/app/app.routes.ts",
+          "hash": "6185150965714414910"
+        },
+        {
+          "file": "apps/webcli/src/index.html",
+          "hash": "3696462289099455549"
+        },
+        {
+          "file": "apps/webcli/src/main.server.ts",
+          "hash": "11653607448136507287"
+        },
+        {
+          "file": "apps/webcli/src/main.ts",
+          "hash": "16635586463787978962"
+        },
+        {
+          "file": "apps/webcli/src/styles.scss",
+          "hash": "17788899824995975898"
+        },
+        {
+          "file": "apps/webcli/src/test-setup.ts",
+          "hash": "12935735732682149507",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "apps/webcli/tailwind.config.js",
+          "hash": "7329457905004625987",
+          "deps": [
+            "npm:tailwindcss"
+          ]
+        },
+        {
+          "file": "apps/webcli/tsconfig.app.json",
+          "hash": "564685728328269220"
+        },
+        {
+          "file": "apps/webcli/tsconfig.editor.json",
+          "hash": "1055794200401717100"
+        },
+        {
+          "file": "apps/webcli/tsconfig.json",
+          "hash": "10165753922017812673"
+        },
+        {
+          "file": "apps/webcli/tsconfig.spec.json",
+          "hash": "2927375835638640771"
+        }
+      ],
+      "seok-sdk": [
+        {
+          "file": "libs/seok-sdk/.eslintrc.json",
+          "hash": "2860376945094815291"
+        },
+        {
+          "file": "libs/seok-sdk/README.md",
+          "hash": "1304370688403482823"
+        },
+        {
+          "file": "libs/seok-sdk/generators.json",
+          "hash": "6902117925845994340"
+        },
+        {
+          "file": "libs/seok-sdk/jest.config.ts",
+          "hash": "18153557377664997474"
+        },
+        {
+          "file": "libs/seok-sdk/package.json",
+          "hash": "12314154527588857849"
+        },
+        {
+          "file": "libs/seok-sdk/project.json",
+          "hash": "16113108261878013942"
+        },
+        {
+          "file": "libs/seok-sdk/src/generators/add-page/files/__nameDasherized__.component.html.template",
+          "hash": "15676997511952895414"
+        },
+        {
+          "file": "libs/seok-sdk/src/generators/add-page/files/__nameDasherized__.component.scss.template",
+          "hash": "2605422728902164104"
+        },
+        {
+          "file": "libs/seok-sdk/src/generators/add-page/files/__nameDasherized__.component.ts.template",
+          "hash": "5418919260899966536"
+        },
+        {
+          "file": "libs/seok-sdk/src/generators/add-page/files/__nameDasherized__.data.json.template",
+          "hash": "8965557707609518424"
+        },
+        {
+          "file": "libs/seok-sdk/src/generators/add-page/generator.ts",
+          "hash": "523150638945037013",
+          "deps": [
+            "npm:typescript"
+          ]
+        },
+        {
+          "file": "libs/seok-sdk/src/generators/add-page/schema.json",
+          "hash": "13912636229853976380"
+        },
+        {
+          "file": "libs/seok-sdk/src/generators/delete-page/generator.ts",
+          "hash": "1252375909186600975",
+          "deps": [
+            "npm:typescript"
+          ]
+        },
+        {
+          "file": "libs/seok-sdk/src/generators/delete-page/schema.json",
+          "hash": "6164658212385029660"
+        },
+        {
+          "file": "libs/seok-sdk/src/generators/set-colors/files/colors.js.template",
+          "hash": "4197528293827099953"
+        },
+        {
+          "file": "libs/seok-sdk/src/generators/set-colors/generator.ts",
+          "hash": "3270653264903210863"
+        },
+        {
+          "file": "libs/seok-sdk/src/generators/set-colors/schema.json",
+          "hash": "15849971338488209"
+        },
+        {
+          "file": "libs/seok-sdk/src/generators/set-fonts/files/fonts.scss.template",
+          "hash": "4252436573007423908"
+        },
+        {
+          "file": "libs/seok-sdk/src/generators/set-fonts/generator.ts",
+          "hash": "17466717792145611859"
+        },
+        {
+          "file": "libs/seok-sdk/src/generators/set-fonts/schema.json",
+          "hash": "13437436440972751242"
+        },
+        {
+          "file": "libs/seok-sdk/src/generators/set-global/files/index.html.template",
+          "hash": "3502957108872009324"
+        },
+        {
+          "file": "libs/seok-sdk/src/generators/set-global/files/public/robots.txt",
+          "hash": "3142697764482508318"
+        },
+        {
+          "file": "libs/seok-sdk/src/generators/set-global/files/seo-kit.data.ts.template",
+          "hash": "3354624408900776292"
+        },
+        {
+          "file": "libs/seok-sdk/src/generators/set-global/generator.ts",
+          "hash": "15771611683750853893",
+          "deps": [
+            "seok-ui"
+          ]
+        },
+        {
+          "file": "libs/seok-sdk/src/generators/set-global/schema.json",
+          "hash": "13604590160037372759"
+        },
+        {
+          "file": "libs/seok-sdk/src/generators/set-home/files/home.component.html.template",
+          "hash": "3399703229240321019"
+        },
+        {
+          "file": "libs/seok-sdk/src/generators/set-home/files/home.component.scss.template",
+          "hash": "13027103444035360129"
+        },
+        {
+          "file": "libs/seok-sdk/src/generators/set-home/files/home.component.ts.template",
+          "hash": "16681114320496007656"
+        },
+        {
+          "file": "libs/seok-sdk/src/generators/set-home/files/home.seo.ts.template",
+          "hash": "17971805084546323644"
+        },
+        {
+          "file": "libs/seok-sdk/src/generators/set-home/generator.ts",
+          "hash": "6142109298258532825"
+        },
+        {
+          "file": "libs/seok-sdk/src/generators/set-home/schema.json",
+          "hash": "13847349682676486661"
+        },
+        {
+          "file": "libs/seok-sdk/src/index.ts",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "libs/seok-sdk/src/ui-utils/big-title/big-title.generator.ts",
+          "hash": "16583366202772504255"
+        },
+        {
+          "file": "libs/seok-sdk/src/ui-utils/big-title/big-title.model.ts",
+          "hash": "18097030599242450498"
+        },
+        {
+          "file": "libs/seok-sdk/src/ui-utils/call-to-action/call-to-action.generator.ts",
+          "hash": "17437882193672862243"
+        },
+        {
+          "file": "libs/seok-sdk/src/ui-utils/call-to-action/call-to-action.model.ts",
+          "hash": "15143878985233723193"
+        },
+        {
+          "file": "libs/seok-sdk/src/ui-utils/catchphrase/catchphrase.generator.ts",
+          "hash": "15567689679500524798"
+        },
+        {
+          "file": "libs/seok-sdk/src/ui-utils/catchphrase/catchphrase.model.ts",
+          "hash": "10696291268358558822"
+        },
+        {
+          "file": "libs/seok-sdk/src/ui-utils/classic-text-image/classic-text-image.generator.ts",
+          "hash": "10494627986478839834"
+        },
+        {
+          "file": "libs/seok-sdk/src/ui-utils/classic-text-image/classic-text-image.model.ts",
+          "hash": "16242096123692011030"
+        },
+        {
+          "file": "libs/seok-sdk/src/ui-utils/empty-separator/empty-separator.generator.ts",
+          "hash": "473465254361243306"
+        },
+        {
+          "file": "libs/seok-sdk/src/ui-utils/faq/faq.generator.ts",
+          "hash": "1997129826190837750"
+        },
+        {
+          "file": "libs/seok-sdk/src/ui-utils/faq/faq.model.ts",
+          "hash": "9975481779985636814"
+        },
+        {
+          "file": "libs/seok-sdk/src/ui-utils/gradient/gradient.generator.ts",
+          "hash": "2302272120144931347"
+        },
+        {
+          "file": "libs/seok-sdk/src/ui-utils/image-presentation/image-presentation.generator.ts",
+          "hash": "423884020140166317"
+        },
+        {
+          "file": "libs/seok-sdk/src/ui-utils/image-presentation/image-presentation.model.ts",
+          "hash": "9525728837144502599"
+        },
+        {
+          "file": "libs/seok-sdk/src/ui-utils/model.generator.ts",
+          "hash": "13736717937094291"
+        },
+        {
+          "file": "libs/seok-sdk/src/ui-utils/model.utils.ts",
+          "hash": "9998642064432273515"
+        },
+        {
+          "file": "libs/seok-sdk/src/ui-utils/prices/prices.generator.ts",
+          "hash": "13914334614395308419"
+        },
+        {
+          "file": "libs/seok-sdk/src/ui-utils/prices/prices.model.ts",
+          "hash": "15057474394450938179"
+        },
+        {
+          "file": "libs/seok-sdk/src/ui-utils/testimonies/testimonies.generator.ts",
+          "hash": "4318933475542226936"
+        },
+        {
+          "file": "libs/seok-sdk/src/ui-utils/testimonies/testimonies.model.ts",
+          "hash": "6010914722668108894"
+        },
+        {
+          "file": "libs/seok-sdk/src/ui-utils/video-presentation/video-presentation.generator.ts",
+          "hash": "1239420706696180077"
+        },
+        {
+          "file": "libs/seok-sdk/src/ui-utils/video-presentation/video-presentation.model.ts",
+          "hash": "3769855487994543663"
+        },
+        {
+          "file": "libs/seok-sdk/src/utils.ts",
+          "hash": "26328343375175215"
+        },
+        {
+          "file": "libs/seok-sdk/tsconfig.json",
+          "hash": "2840670722752396445"
+        },
+        {
+          "file": "libs/seok-sdk/tsconfig.lib.json",
+          "hash": "3632393694954060084"
+        },
+        {
+          "file": "libs/seok-sdk/tsconfig.spec.json",
+          "hash": "11550347367511341917"
+        }
+      ],
+      "webcli-app": [
+        {
+          "file": "apps/webcli-app/.eslintrc.json",
+          "hash": "3322449398258820698"
+        },
+        {
+          "file": "apps/webcli-app/jest.config.ts",
+          "hash": "15746300826724056133"
+        },
+        {
+          "file": "apps/webcli-app/project.json",
+          "hash": "2663732197788382467"
+        },
+        {
+          "file": "apps/webcli-app/public/favicon.svg",
+          "hash": "13335807490525562914"
+        },
+        {
+          "file": "apps/webcli-app/server.ts",
+          "hash": "6405591871656731060",
+          "deps": [
+            "npm:express",
+            "npm:ws"
+          ]
+        },
+        {
+          "file": "apps/webcli-app/src-server/colors.ts",
+          "hash": "339498860293462711"
+        },
+        {
+          "file": "apps/webcli-app/src-server/fonts.ts",
+          "hash": "17886125410151688013",
+          "deps": [
+            "npm:multer"
+          ]
+        },
+        {
+          "file": "apps/webcli-app/src-server/global.ts",
+          "hash": "603364947872315130",
+          "deps": [
+            "npm:multer",
+            "npm:sharp"
+          ]
+        },
+        {
+          "file": "apps/webcli-app/src-server/home.ts",
+          "hash": "3300376777115015930"
+        },
+        {
+          "file": "apps/webcli-app/src-server/model.ts",
+          "hash": "9247526273044597220",
+          "deps": [
+            "npm:express"
+          ]
+        },
+        {
+          "file": "apps/webcli-app/src-server/pages.ts",
+          "hash": "18023626152655071389"
+        },
+        {
+          "file": "apps/webcli-app/src-server/public.ts",
+          "hash": "16296013828834314784",
+          "deps": [
+            "npm:multer",
+            "npm:sharp"
+          ]
+        },
+        {
+          "file": "apps/webcli-app/src-server/serve-build-deploy.ts",
+          "hash": "16189119198596513581"
+        },
+        {
+          "file": "apps/webcli-app/src/app/app.component.html",
+          "hash": "1082746799784991304"
+        },
+        {
+          "file": "apps/webcli-app/src/app/app.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/webcli-app/src/app/app.component.ts",
+          "hash": "18168067876927916914"
+        },
+        {
+          "file": "apps/webcli-app/src/app/app.config.server.ts",
+          "hash": "472700109066692288"
+        },
+        {
+          "file": "apps/webcli-app/src/app/app.config.ts",
+          "hash": "17629401537831496357"
+        },
+        {
+          "file": "apps/webcli-app/src/app/app.routes.ts",
+          "hash": "12564050769699935149"
+        },
+        {
+          "file": "apps/webcli-app/src/app/build-deploy/build-deploy.component.html",
+          "hash": "7881217900955971548"
+        },
+        {
+          "file": "apps/webcli-app/src/app/build-deploy/build-deploy.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/webcli-app/src/app/build-deploy/build-deploy.component.spec.ts",
+          "hash": "14306031953626630670"
+        },
+        {
+          "file": "apps/webcli-app/src/app/build-deploy/build-deploy.component.ts",
+          "hash": "14615764251210695145"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config-preview.component.html",
+          "hash": "13792607052678892253"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config-preview.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config-preview.component.spec.ts",
+          "hash": "5637326497113111206"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config-preview.component.ts",
+          "hash": "15281349718892030340"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/colors/colors.component.html",
+          "hash": "9054568537209588419"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/colors/colors.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/colors/colors.component.spec.ts",
+          "hash": "9060347317367162452"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/colors/colors.component.ts",
+          "hash": "5675013243766007527",
+          "deps": [
+            "npm:chroma-js",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/config.component.html",
+          "hash": "5514268166733047255"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/config.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/config.component.spec.ts",
+          "hash": "7830091660882916415"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/config.component.ts",
+          "hash": "6286028434810854559"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/fonts/fonts.component.html",
+          "hash": "8147218462708546884"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/fonts/fonts.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/fonts/fonts.component.spec.ts",
+          "hash": "5649649582417587583"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/fonts/fonts.component.ts",
+          "hash": "1748552505765460259"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/global/favicon/favicon.component.html",
+          "hash": "4420346778556906075"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/global/favicon/favicon.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/global/favicon/favicon.component.spec.ts",
+          "hash": "15442487101626439837"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/global/favicon/favicon.component.ts",
+          "hash": "15890818486534108629"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/global/global.component.html",
+          "hash": "16814844416245521637"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/global/global.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/global/global.component.spec.ts",
+          "hash": "17695245805363102650"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/global/global.component.ts",
+          "hash": "16565001961202155171",
+          "deps": [
+            "npm:rxjs",
+            "seok-ui"
+          ]
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/global/logo/logo.component.html",
+          "hash": "11114466297734913766"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/global/logo/logo.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/global/logo/logo.component.spec.ts",
+          "hash": "7070719354423884655"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/global/logo/logo.component.ts",
+          "hash": "12814987002416800324"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/home/home.component.html",
+          "hash": "14284569073738105757"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/home/home.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/home/home.component.spec.ts",
+          "hash": "2620641819347346630"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/home/home.component.ts",
+          "hash": "462666254490518832",
+          "deps": [
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/pages/pages.component.html",
+          "hash": "4018626699153400254"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/pages/pages.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/pages/pages.component.spec.ts",
+          "hash": "6720131363038232593"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/pages/pages.component.ts",
+          "hash": "15498859095500780754",
+          "deps": [
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/public/public.component.html",
+          "hash": "13835197623274027159"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/public/public.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/public/public.component.spec.ts",
+          "hash": "2741389883715542663"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/config/public/public.component.ts",
+          "hash": "2806090250234575706"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/preview/iframe-url.service.ts",
+          "hash": "12809885701940106652",
+          "deps": [
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/preview/preview.component.html",
+          "hash": "823877497972533266"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/preview/preview.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/preview/preview.component.spec.ts",
+          "hash": "10879777516399350962"
+        },
+        {
+          "file": "apps/webcli-app/src/app/config-preview/preview/preview.component.ts",
+          "hash": "13368581372986029827"
+        },
+        {
+          "file": "apps/webcli-app/src/app/documentation/documentation.component.html",
+          "hash": "9698512645141378193"
+        },
+        {
+          "file": "apps/webcli-app/src/app/documentation/documentation.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/webcli-app/src/app/documentation/documentation.component.spec.ts",
+          "hash": "13681375402327595858"
+        },
+        {
+          "file": "apps/webcli-app/src/app/documentation/documentation.component.ts",
+          "hash": "4754467450961520466"
+        },
+        {
+          "file": "apps/webcli-app/src/app/first-step/first-step.component.html",
+          "hash": "11735541380919538503"
+        },
+        {
+          "file": "apps/webcli-app/src/app/first-step/first-step.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/webcli-app/src/app/first-step/first-step.component.spec.ts",
+          "hash": "7248944038557004337"
+        },
+        {
+          "file": "apps/webcli-app/src/app/first-step/first-step.component.ts",
+          "hash": "10975800432104873157"
+        },
+        {
+          "file": "apps/webcli-app/src/app/shared/seo-preview/seo-preview.component.html",
+          "hash": "15314765134383825022"
+        },
+        {
+          "file": "apps/webcli-app/src/app/shared/seo-preview/seo-preview.component.scss",
+          "hash": "4179128200098034517"
+        },
+        {
+          "file": "apps/webcli-app/src/app/shared/seo-preview/seo-preview.component.spec.ts",
+          "hash": "13866367251990522149"
+        },
+        {
+          "file": "apps/webcli-app/src/app/shared/seo-preview/seo-preview.component.ts",
+          "hash": "11941733550573308780"
+        },
+        {
+          "file": "apps/webcli-app/src/app/shared/terminal/server-websocket.service.ts",
+          "hash": "10752922272945210135",
+          "deps": [
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "apps/webcli-app/src/app/shared/terminal/terminal.component.html",
+          "hash": "9692054532540678764"
+        },
+        {
+          "file": "apps/webcli-app/src/app/shared/terminal/terminal.component.scss",
+          "hash": "10809909526355530389"
+        },
+        {
+          "file": "apps/webcli-app/src/app/shared/terminal/terminal.component.spec.ts",
+          "hash": "1606693181541720259"
+        },
+        {
+          "file": "apps/webcli-app/src/app/shared/terminal/terminal.component.ts",
+          "hash": "6554758626212436931",
+          "deps": [
+            "npm:@xterm/xterm",
+            "npm:@xterm/addon-fit"
+          ]
+        },
+        {
+          "file": "apps/webcli-app/src/index.html",
+          "hash": "17134677972385956841"
+        },
+        {
+          "file": "apps/webcli-app/src/main.server.ts",
+          "hash": "11653607448136507287"
+        },
+        {
+          "file": "apps/webcli-app/src/main.ts",
+          "hash": "13856503497470522412"
+        },
+        {
+          "file": "apps/webcli-app/src/styles.scss",
+          "hash": "8616286927849761290"
+        },
+        {
+          "file": "apps/webcli-app/src/test-setup.ts",
+          "hash": "12935735732682149507",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "apps/webcli-app/tailwind.config.js",
+          "hash": "13135289803129413253",
+          "deps": [
+            "npm:tailwindcss"
+          ]
+        },
+        {
+          "file": "apps/webcli-app/tsconfig.app.json",
+          "hash": "564685728328269220"
+        },
+        {
+          "file": "apps/webcli-app/tsconfig.editor.json",
+          "hash": "1055794200401717100"
+        },
+        {
+          "file": "apps/webcli-app/tsconfig.json",
+          "hash": "10165753922017812673"
+        },
+        {
+          "file": "apps/webcli-app/tsconfig.spec.json",
+          "hash": "2927375835638640771"
+        }
+      ],
+      "seok-core": [
+        {
+          "file": "libs/seok-core/.eslintrc.json",
+          "hash": "9628345067573567197"
+        },
+        {
+          "file": "libs/seok-core/README.md",
+          "hash": "5792968763558639851"
+        },
+        {
+          "file": "libs/seok-core/jest.config.ts",
+          "hash": "8217206412241488376"
+        },
+        {
+          "file": "libs/seok-core/project.json",
+          "hash": "8285118892657922812"
+        },
+        {
+          "file": "libs/seok-core/src/lib/json-ld/index.ts",
+          "hash": "12925622951785793782"
+        },
+        {
+          "file": "libs/seok-core/src/lib/json-ld/json-ld.component.d.ts",
+          "hash": "15610714853957918694"
+        },
+        {
+          "file": "libs/seok-core/src/lib/json-ld/json-ld.component.js",
+          "hash": "3040444927168922016"
+        },
+        {
+          "file": "libs/seok-core/src/lib/json-ld/json-ld.component.js.map",
+          "hash": "10209901469669391548"
+        },
+        {
+          "file": "libs/seok-core/src/lib/json-ld/json-ld.component.ts",
+          "hash": "2636833738792621881"
+        },
+        {
+          "file": "libs/seok-core/src/lib/json-ld/json-ld.data.d.ts",
+          "hash": "4084845591174882597",
+          "deps": [
+            "npm:schema-dts"
+          ]
+        },
+        {
+          "file": "libs/seok-core/src/lib/json-ld/json-ld.data.js",
+          "hash": "17364721030086592153"
+        },
+        {
+          "file": "libs/seok-core/src/lib/json-ld/json-ld.data.js.map",
+          "hash": "13281284232256260315"
+        },
+        {
+          "file": "libs/seok-core/src/lib/json-ld/json-ld.data.ts",
+          "hash": "13388263537305277413",
+          "deps": [
+            "npm:schema-dts",
+            "seok-generated"
+          ]
+        },
+        {
+          "file": "libs/seok-core/src/lib/metatags/index.mock.ts",
+          "hash": "10767285459518609830"
+        },
+        {
+          "file": "libs/seok-core/src/lib/metatags/index.ts",
+          "hash": "4284936632855352160"
+        },
+        {
+          "file": "libs/seok-core/src/lib/metatags/metatags.builder.spec.ts",
+          "hash": "11839563634461836695"
+        },
+        {
+          "file": "libs/seok-core/src/lib/metatags/metatags.builder.ts",
+          "hash": "2577413940726862089"
+        },
+        {
+          "file": "libs/seok-core/src/lib/metatags/metatags.model.ts",
+          "hash": "6866584999105138329"
+        },
+        {
+          "file": "libs/seok-core/src/lib/metatags/metatags.service.d.ts",
+          "hash": "15906433896851350580"
+        },
+        {
+          "file": "libs/seok-core/src/lib/metatags/metatags.service.js",
+          "hash": "14134914675576545864"
+        },
+        {
+          "file": "libs/seok-core/src/lib/metatags/metatags.service.js.map",
+          "hash": "10442525791861257491"
+        },
+        {
+          "file": "libs/seok-core/src/lib/metatags/metatags.service.mock.ts",
+          "hash": "3644432922148669327",
+          "deps": [
+            "npm:@jest/globals"
+          ]
+        },
+        {
+          "file": "libs/seok-core/src/lib/metatags/metatags.service.ts",
+          "hash": "17166377363745707104"
+        },
+        {
+          "file": "libs/seok-core/src/lib/pages/index.ts",
+          "hash": "663133371342391713"
+        },
+        {
+          "file": "libs/seok-core/src/lib/pages/pages.model.ts",
+          "hash": "2668072016681642352"
+        },
+        {
+          "file": "libs/seok-core/src/lib/sitemap/index.ts",
+          "hash": "5415485725812302472"
+        },
+        {
+          "file": "libs/seok-core/src/lib/sitemap/sitemap.generator.ts",
+          "hash": "15758352758706588644",
+          "deps": [
+            "npm:xmlbuilder"
+          ]
+        },
+        {
+          "file": "libs/seok-core/src/lib/sitemap/sitemap.model.ts",
+          "hash": "15036129577210228659"
+        },
+        {
+          "file": "libs/seok-core/src/lib/string-date/string-date.ts",
+          "hash": "2961639403930647104"
+        },
+        {
+          "file": "libs/seok-core/src/test-setup.ts",
+          "hash": "12935735732682149507",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "libs/seok-core/tsconfig.json",
+          "hash": "15487755565970508470"
+        },
+        {
+          "file": "libs/seok-core/tsconfig.lib.json",
+          "hash": "5796668385415907511"
+        },
+        {
+          "file": "libs/seok-core/tsconfig.spec.json",
+          "hash": "2927375835638640771"
+        }
+      ],
+      "seok-generated": [
+        {
+          "file": "libs/seok-generated/.eslintrc.json",
+          "hash": "9628345067573567197"
+        },
+        {
+          "file": "libs/seok-generated/README.md",
+          "hash": "3524820728630147290"
+        },
+        {
+          "file": "libs/seok-generated/jest.config.ts",
+          "hash": "10659468789166132722"
+        },
+        {
+          "file": "libs/seok-generated/project.json",
+          "hash": "3314544942595519145"
+        },
+        {
+          "file": "libs/seok-generated/src/lib/favicon.ts",
+          "hash": "4843256742942213344"
+        },
+        {
+          "file": "libs/seok-generated/src/lib/global.ts",
+          "hash": "15363282930428203645"
+        },
+        {
+          "file": "libs/seok-generated/src/lib/logo.ts",
+          "hash": "13412772618424677601"
+        },
+        {
+          "file": "libs/seok-generated/src/lib/styles/get-color.js",
+          "hash": "4992507738165794059",
+          "deps": [
+            "npm:typescript"
+          ]
+        },
+        {
+          "file": "libs/seok-generated/src/lib/styles/styles.ts",
+          "hash": "10512990054544832964",
+          "deps": [
+            "seok-ui"
+          ]
+        },
+        {
+          "file": "libs/seok-generated/src/test-setup.ts",
+          "hash": "12935735732682149507",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "libs/seok-generated/tsconfig.json",
+          "hash": "15487755565970508470"
+        },
+        {
+          "file": "libs/seok-generated/tsconfig.lib.json",
+          "hash": "5796668385415907511"
+        },
+        {
+          "file": "libs/seok-generated/tsconfig.spec.json",
+          "hash": "2927375835638640771"
+        }
+      ],
+      "seok-ui": [
+        {
+          "file": "libs/seok-ui/.eslintrc.json",
+          "hash": "9628345067573567197"
+        },
+        {
+          "file": "libs/seok-ui/README.md",
+          "hash": "14684540260732296703"
+        },
+        {
+          "file": "libs/seok-ui/jest.config.ts",
+          "hash": "17011523259872457761"
+        },
+        {
+          "file": "libs/seok-ui/project.json",
+          "hash": "17222150187757200122"
+        },
+        {
+          "file": "libs/seok-ui/src/index.ts",
+          "hash": "12659424005754352063"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/big-title/big-title.component.html",
+          "hash": "7360721509241773491"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/big-title/big-title.component.scss",
+          "hash": "13027103444035360129"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/big-title/big-title.component.ts",
+          "hash": "286877900893616440"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/big-title/big-title.model.ts",
+          "hash": "1717663364597460338"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/call-to-action/call-to-action.component.html",
+          "hash": "8979938829889976966"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/call-to-action/call-to-action.component.scss",
+          "hash": "13027103444035360129"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/call-to-action/call-to-action.component.ts",
+          "hash": "6846492546672094687"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/call-to-action/call-to-action.model.ts",
+          "hash": "14259557785476363772"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/catchphrase/catchphrase.component.d.ts",
+          "hash": "11070021362527198246"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/catchphrase/catchphrase.component.html",
+          "hash": "17949159564330148928"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/catchphrase/catchphrase.component.js",
+          "hash": "16821039415946087677"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/catchphrase/catchphrase.component.js.map",
+          "hash": "13166859686564727485"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/catchphrase/catchphrase.component.scss",
+          "hash": "13027103444035360129"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/catchphrase/catchphrase.component.ts",
+          "hash": "7469357961424329422"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/catchphrase/catchphrase.model.ts",
+          "hash": "556024381654151944"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/classic-text-image/classic-text-image.component.html",
+          "hash": "2560695345475966726"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/classic-text-image/classic-text-image.component.scss",
+          "hash": "13027103444035360129"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/classic-text-image/classic-text-image.component.ts",
+          "hash": "3508312561552187438"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/classic-text-image/classic-text-image.model.ts",
+          "hash": "6169525601474038896"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/empty-separator/empty-separator.component.html",
+          "hash": "13798328870189594117"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/empty-separator/empty-separator.component.scss",
+          "hash": "13027103444035360129"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/empty-separator/empty-separator.component.ts",
+          "hash": "12818488681165201881"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/faq/faq.component.d.ts",
+          "hash": "14666100222077927590"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/faq/faq.component.html",
+          "hash": "1281375372916233858"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/faq/faq.component.js",
+          "hash": "1685157372496868873"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/faq/faq.component.js.map",
+          "hash": "6572754708939246152"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/faq/faq.component.scss",
+          "hash": "13027103444035360129"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/faq/faq.component.ts",
+          "hash": "12146701730411665535"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/faq/faq.model.ts",
+          "hash": "8619309945724311363"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/gradient/gradient.component.d.ts",
+          "hash": "6639361424421988263"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/gradient/gradient.component.html",
+          "hash": "13470482117379278683"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/gradient/gradient.component.js",
+          "hash": "9812683874943766934"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/gradient/gradient.component.js.map",
+          "hash": "1620693331528264919"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/gradient/gradient.component.scss",
+          "hash": "13027103444035360129"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/gradient/gradient.component.ts",
+          "hash": "3031567394899654043"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/image-presentation/image-presentation.component.html",
+          "hash": "7899507116387747012"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/image-presentation/image-presentation.component.scss",
+          "hash": "13027103444035360129"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/image-presentation/image-presentation.component.ts",
+          "hash": "15393037498909642481"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/image-presentation/image-presentation.model.ts",
+          "hash": "11985341451705597503"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/prices/prices.component.html",
+          "hash": "2463530581162087142"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/prices/prices.component.scss",
+          "hash": "13027103444035360129"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/prices/prices.component.ts",
+          "hash": "1415524595020815728"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/prices/prices.model.ts",
+          "hash": "15802635126618938195"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/prices/prices.service.ts",
+          "hash": "3293597029847934153",
+          "deps": [
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "libs/seok-ui/src/lib/seok-ui.utils.ts",
+          "hash": "15296997145182677455"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/template-style.model.ts",
+          "hash": "389885154567411772"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/testimonies/testimonies.component.html",
+          "hash": "7161858053896082570"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/testimonies/testimonies.component.scss",
+          "hash": "13027103444035360129"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/testimonies/testimonies.component.ts",
+          "hash": "10268178820753837590"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/testimonies/testimonies.model.ts",
+          "hash": "12987586809922174720"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/video-presentation/video-presentation.component.html",
+          "hash": "10581975919278801347"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/video-presentation/video-presentation.component.scss",
+          "hash": "13027103444035360129"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/video-presentation/video-presentation.component.ts",
+          "hash": "1306681921640448839"
+        },
+        {
+          "file": "libs/seok-ui/src/lib/video-presentation/video-presentation.model.ts",
+          "hash": "13761787145127639913"
+        },
+        {
+          "file": "libs/seok-ui/src/test-setup.ts",
+          "hash": "12935735732682149507",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "libs/seok-ui/tsconfig.json",
+          "hash": "15487755565970508470"
+        },
+        {
+          "file": "libs/seok-ui/tsconfig.lib.json",
+          "hash": "5796668385415907511"
+        },
+        {
+          "file": "libs/seok-ui/tsconfig.spec.json",
+          "hash": "2927375835638640771"
+        }
+      ],
+      "client-app": [
+        {
+          "file": "apps/client-app/.eslintrc.json",
+          "hash": "3322449398258820698"
+        },
+        {
+          "file": "apps/client-app/get-color.js",
+          "hash": "4467080416099749216",
+          "deps": [
+            "npm:typescript"
+          ]
+        },
+        {
+          "file": "apps/client-app/jest.config.ts",
+          "hash": "2756923090781698689"
+        },
+        {
+          "file": "apps/client-app/project.json",
+          "hash": "4757948032676715814"
+        },
+        {
+          "file": "apps/client-app/public/logo_24x24.svg",
+          "hash": "331341599470616257"
+        },
+        {
+          "file": "apps/client-app/server.ts",
+          "hash": "8086175766969307244",
+          "deps": [
+            "npm:express"
+          ]
+        },
+        {
+          "file": "apps/client-app/set-color.js",
+          "hash": "16596537895571415039",
+          "deps": [
+            "npm:typescript"
+          ]
+        },
+        {
+          "file": "apps/client-app/src/app/app.component.html",
+          "hash": "717119710865838034"
+        },
+        {
+          "file": "apps/client-app/src/app/app.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/client-app/src/app/app.component.ts",
+          "hash": "9741415882789825703",
+          "deps": [
+            "seok-ui",
+            "seok-generated"
+          ]
+        },
+        {
+          "file": "apps/client-app/src/app/app.config.server.ts",
+          "hash": "472700109066692288"
+        },
+        {
+          "file": "apps/client-app/src/app/app.config.ts",
+          "hash": "329820971706164514",
+          "deps": [
+            "seok-ui",
+            "seok-generated"
+          ]
+        },
+        {
+          "file": "apps/client-app/src/app/app.routes.ts",
+          "hash": "3951065058747769514"
+        },
+        {
+          "file": "apps/client-app/src/app/footer/footer.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/client-app/src/app/footer/footer.component.html",
+          "hash": "660202695445428437"
+        },
+        {
+          "file": "apps/client-app/src/app/footer/footer.component.spec.ts",
+          "hash": "6523126951382397383"
+        },
+        {
+          "file": "apps/client-app/src/app/footer/footer.component.ts",
+          "hash": "6777498988770498418",
+          "deps": [
+            "seok-ui",
+            "seok-generated"
+          ]
+        },
+        {
+          "file": "apps/client-app/src/app/header/header.component.css",
+          "hash": "4055606894390288348"
+        },
+        {
+          "file": "apps/client-app/src/app/header/header.component.html",
+          "hash": "5417998315301038079"
+        },
+        {
+          "file": "apps/client-app/src/app/header/header.component.spec.ts",
+          "hash": "14720898316259393382"
+        },
+        {
+          "file": "apps/client-app/src/app/header/header.component.ts",
+          "hash": "6606424717537753945",
+          "deps": [
+            "seok-ui",
+            "seok-generated"
+          ]
+        },
+        {
+          "file": "apps/client-app/src/app/pages/pages.routes.ts",
+          "hash": "12908561771492527812"
+        },
+        {
+          "file": "apps/client-app/src/app/pages/pages.styles.scss",
+          "hash": "10144875678046924454"
+        },
+        {
+          "file": "apps/client-app/src/app/shared/json-ld/json-ld.component.d.ts",
+          "hash": "15610714853957918694"
+        },
+        {
+          "file": "apps/client-app/src/app/shared/json-ld/json-ld.component.js",
+          "hash": "3040444927168922016"
+        },
+        {
+          "file": "apps/client-app/src/app/shared/json-ld/json-ld.component.js.map",
+          "hash": "10209901469669391548"
+        },
+        {
+          "file": "apps/client-app/src/app/shared/json-ld/json-ld.component.ts",
+          "hash": "16986036283524142069"
+        },
+        {
+          "file": "apps/client-app/src/app/shared/json-ld/json-ld.data.d.ts",
+          "hash": "4084845591174882597",
+          "deps": [
+            "npm:schema-dts"
+          ]
+        },
+        {
+          "file": "apps/client-app/src/app/shared/json-ld/json-ld.data.js",
+          "hash": "17364721030086592153"
+        },
+        {
+          "file": "apps/client-app/src/app/shared/json-ld/json-ld.data.js.map",
+          "hash": "13281284232256260315"
+        },
+        {
+          "file": "apps/client-app/src/app/shared/json-ld/json-ld.data.ts",
+          "hash": "1437417254381147917",
+          "deps": [
+            "npm:schema-dts",
+            "seok-generated"
+          ]
+        },
+        {
+          "file": "apps/client-app/src/app/shared/seo/seo.builder.d.ts",
+          "hash": "5953419527410663455"
+        },
+        {
+          "file": "apps/client-app/src/app/shared/seo/seo.builder.js",
+          "hash": "6861772999356787344"
+        },
+        {
+          "file": "apps/client-app/src/app/shared/seo/seo.builder.js.map",
+          "hash": "6112167013139465887"
+        },
+        {
+          "file": "apps/client-app/src/app/shared/seo/seo.builder.spec.ts",
+          "hash": "7057408551487303471"
+        },
+        {
+          "file": "apps/client-app/src/app/shared/seo/seo.builder.ts",
+          "hash": "11325198221802484747",
+          "deps": [
+            "seok-generated"
+          ]
+        },
+        {
+          "file": "apps/client-app/src/app/shared/seo/seo.service.d.ts",
+          "hash": "495117619453541726"
+        },
+        {
+          "file": "apps/client-app/src/app/shared/seo/seo.service.js",
+          "hash": "4612164212086543690"
+        },
+        {
+          "file": "apps/client-app/src/app/shared/seo/seo.service.js.map",
+          "hash": "10442525791861257491"
+        },
+        {
+          "file": "apps/client-app/src/app/shared/seo/seo.service.mock.ts",
+          "hash": "14723947599320338484"
+        },
+        {
+          "file": "apps/client-app/src/app/shared/seo/seo.service.ts",
+          "hash": "843197810006874808"
+        },
+        {
+          "file": "apps/client-app/src/generated/favicon/favicon.png",
+          "hash": "13232418548073793284"
+        },
+        {
+          "file": "apps/client-app/src/generated/fonts.scss",
+          "hash": "9315927243618269651"
+        },
+        {
+          "file": "apps/client-app/src/generated/index.html",
+          "hash": "2194514596511426791"
+        },
+        {
+          "file": "apps/client-app/src/generated/logo/favicon.png",
+          "hash": "13232418548073793284"
+        },
+        {
+          "file": "apps/client-app/src/generated/pages-generated/home/home.component.html",
+          "hash": "10340703252049391711"
+        },
+        {
+          "file": "apps/client-app/src/generated/pages-generated/home/home.component.scss",
+          "hash": "13027103444035360129"
+        },
+        {
+          "file": "apps/client-app/src/generated/pages-generated/home/home.component.ts",
+          "hash": "8377155577613064607",
+          "deps": [
+            "seok-ui"
+          ]
+        },
+        {
+          "file": "apps/client-app/src/generated/pages-generated/home/home.seo.ts",
+          "hash": "14220842590102539845"
+        },
+        {
+          "file": "apps/client-app/src/generated/public/robots.txt",
+          "hash": "5751307454046314902"
+        },
+        {
+          "file": "apps/client-app/src/generated/public/sitemap.xml",
+          "hash": "8198159980006274288"
+        },
+        {
+          "file": "apps/client-app/src/generated/seo-kit.data.ts",
+          "hash": "9710508796687156116",
+          "deps": [
+            "seok-ui"
+          ]
+        },
+        {
+          "file": "apps/client-app/src/main.server.ts",
+          "hash": "11653607448136507287"
+        },
+        {
+          "file": "apps/client-app/src/main.ts",
+          "hash": "16635586463787978962"
+        },
+        {
+          "file": "apps/client-app/src/styles.scss",
+          "hash": "13729686354721758752"
+        },
+        {
+          "file": "apps/client-app/src/test-setup.ts",
+          "hash": "12935735732682149507",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "apps/client-app/tailwind.config.js",
+          "hash": "13223667897873614823",
+          "deps": [
+            "npm:tailwindcss"
+          ]
+        },
+        {
+          "file": "apps/client-app/tsconfig.app.json",
+          "hash": "15939542830489709239"
+        },
+        {
+          "file": "apps/client-app/tsconfig.editor.json",
+          "hash": "1055794200401717100"
+        },
+        {
+          "file": "apps/client-app/tsconfig.json",
+          "hash": "9602423519056316194"
+        },
+        {
+          "file": "apps/client-app/tsconfig.spec.json",
+          "hash": "2927375835638640771"
+        }
+      ]
+    },
+    "nonProjectFiles": [
+      {
+        "file": ".editorconfig",
+        "hash": "5443105041930014821"
+      },
+      {
+        "file": ".eslintignore",
+        "hash": "7663861978715868291"
+      },
+      {
+        "file": ".eslintrc.json",
+        "hash": "746227632153557778"
+      },
+      {
+        "file": ".firebaserc",
+        "hash": "17295989902762748343"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "14783694789630723575"
+      },
+      {
+        "file": ".prettierignore",
+        "hash": "3395189204293871444"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "16267754514737964994"
+      },
+      {
+        "file": "CHANGELOG.md",
+        "hash": "7838471702784258692"
+      },
+      {
+        "file": "README.md",
+        "hash": "12539368133631957015"
+      },
+      {
+        "file": "firebase.json",
+        "hash": "13337651957953985193"
+      },
+      {
+        "file": "jest.config.ts",
+        "hash": "3494843969422251966"
+      },
+      {
+        "file": "jest.preset.js",
+        "hash": "9430166341120122740"
+      },
+      {
+        "file": "migrations.json",
+        "hash": "510430331186576391"
+      },
+      {
+        "file": "nx.json",
+        "hash": "11639959094194084203"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "11970157466916015720"
+      },
+      {
+        "file": "package.json",
+        "hash": "9862741277753252392"
+      },
+      {
+        "file": "seok-config-files/favicons/favicon.png",
+        "hash": "13232418548073793284"
+      },
+      {
+        "file": "seok-config-files/fonts.config.json",
+        "hash": "15398500327122379492"
+      },
+      {
+        "file": "seok-config-files/global.config.json",
+        "hash": "17416428059627110520"
+      },
+      {
+        "file": "seok-config-files/home.config.json",
+        "hash": "16614144910720965611"
+      },
+      {
+        "file": "seok-config-files/logos/favicon.png",
+        "hash": "13232418548073793284"
+      },
+      {
+        "file": "sitemap/sitemap.generator.d.ts",
+        "hash": "4595979742548113990"
+      },
+      {
+        "file": "sitemap/sitemap.generator.js.map",
+        "hash": "3857822756354346177"
+      },
+      {
+        "file": "sitemap/sitemap.generator.ts",
+        "hash": "15877764975424859558"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "17605870272017666466"
+      }
+    ]
+  }
+}

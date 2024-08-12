@@ -1,0 +1,27 @@
+@if (SeoKitStyle === 'default') {
+  <div class="max-w-prose mx-auto">
+    <h1 class="title pl-[5%] max-w-[65%] md:max-w-[85%] text-balance leading-[8vw] sm:leading-[7vw] xl:leading-[75px] text-left text-[8vw] sm:text-[7vw] md:text-[6vw] xl:text-[70px] font-bold">
+      @for (element of data().catchphrase; track element) {
+        <span [ngClass]="element.emphase ? 'inline-block px-2 -rotate-3 dark:bg-neutral-100 bg-neutral-950 text-neutral-100 dark:text-neutral-950' : ''">{{ element.text }}</span>
+      }
+    </h1>
+
+
+    @if (data().cta; as cta) {
+      <seok-call-to-action class="mt-20 w-fit ml-auto" [data]="cta"></seok-call-to-action>
+    }
+  </div>
+} @else if (SeoKitStyle === 'yankees') {
+  <div class="max-w-prose mx-auto">
+    <h1 class="title pl-[5%] text-balance leading-[8vw] sm:leading-[7vw] xl:leading-[75px] text-left text-[8vw] sm:text-[7vw] md:text-[6vw] xl:text-[70px] font-bold">
+      @for (element of data().catchphrase; track element) {
+        <span [ngClass]="element.emphase ? 'inline-block px-2 -rotate-6 dark:text-primary-600 text-primary-400' : ''">{{ element.text }}</span>
+      }
+    </h1>
+
+
+    @if (data().cta; as cta) {
+      <seok-call-to-action class="mt-20" [data]="cta"></seok-call-to-action>
+    }
+  </div>
+}
