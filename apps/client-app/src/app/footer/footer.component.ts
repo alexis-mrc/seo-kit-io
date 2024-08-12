@@ -4,7 +4,6 @@ import {NgOptimizedImage} from "@angular/common";
 import { Link, SEO_KIT_STYLE, SeoKitStyle } from '@seo-kit-boilerplate/seok-ui';
 import {seokContactEmail} from "@seo-kit-boilerplate/seok-generated/settings";
 import { LangService } from '@seo-kit-boilerplate/seok-core/lang';
-import { url as ExamplePillarUrl } from '../pages/example-pillar/example-pillar.page';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -22,8 +21,9 @@ export class FooterComponent {
 
   linksByLang: Record<string, Link[]> = {
     'en': [
-      {url: ExamplePillarUrl, label: 'Example Pillar'},
-    ]
+    ],
+    'fr': [
+    ],
   };
 
   lang = inject(LangService).lang;

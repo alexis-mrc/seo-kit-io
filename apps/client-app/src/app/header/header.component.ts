@@ -9,7 +9,6 @@ import {
   seokWebsiteName
 } from "@seo-kit-boilerplate/seok-generated/settings";
 import { LangService } from '@seo-kit-boilerplate/seok-core/lang';
-import {url as ExamplePillarUrl } from '../pages/example-pillar/example-pillar.page';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -30,8 +29,9 @@ export class HeaderComponent {
 
   linksByLang: Record<string, Link[]> = {
     'en': [
-      {url: ExamplePillarUrl, label: 'Example Pillar'},
-    ]
+    ],
+    'fr': [
+    ],
   };
 
   lang = inject(LangService).lang;

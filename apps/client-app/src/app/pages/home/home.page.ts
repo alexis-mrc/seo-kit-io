@@ -5,16 +5,16 @@ export const url = "";
 export const lang = "en";
 export const state: SeokPageState = "published";
 export const metatags: Metatags = {
-    title: "Home",
-    description: "",
-    image: "",
+    title: "Discover the seo-kit-boilerplate to create SEO-optimized websites effortlessly. Deploy with ease. Start building your high-ranking website today!",
+    description: "Discover the seo-kit-boilerplate to create SEO-optimized websites effortlessly. Deploy with ease. Start building your high-ranking website today!",
+    image: "https://seo-kit.io/logo-seo-kit.svg",
     og: {
-        type: "",
-        site_name: ""
+        type: "website",
+        site_name: "SEO KIT"
     },
     twitter: {
-        card: "",
-        site: "",
+        card: "summary_large_image",
+        site: "SEO KIT",
         creator: ""
     }
 };
