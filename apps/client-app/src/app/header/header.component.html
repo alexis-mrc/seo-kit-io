@@ -2,15 +2,15 @@
   <header class="flex md:flex-row gap-8 flex-col justify-between items-center mx-auto p-8 max-w-screen-xl">
     <div class="self-start shrink-0">
 
-      <a class="align-middle text-m font-title flex flex-row gap-2 items-center" [routerLink]="'/'">
-       @if (logoUrl() && logoWidth() && logoHeight()) {
+      <a class="align-middle text-m font-title flex flex-row gap-2" [routerLink]="homePath()">
+        @if (logoUrl() && logoWidth() && logoHeight()) {
           <img [ngSrc]="logoUrl()" [alt]="'Logo ' + websiteName()" [width]="logoWidth()" [height]="logoHeight()">
         }
 
         {{ websiteName() }}
       </a>
     </div>
-    <div class="flex flex-row gap-8 flex-wrap">
+    <div class="flex flex-row gap-8 flex-wrap items-center">
       @for (route of links(); track route) {
         <a [routerLink]="route.url" class="text-neutral-700 dark:text-neutral-300">{{ route.label }}</a>
       }
@@ -20,7 +20,7 @@
   <header class="flex flex-col gap-8 justify-center items-center mx-auto p-8">
     <div class="align-middle">
 
-      <a class="text-m font-title flex flex-row gap-2 items-center" [routerLink]="'/'">
+      <a class="text-m font-title flex flex-row gap-2" [routerLink]="homePath()">
         @if (logoUrl() && logoWidth() && logoHeight()) {
           <img [ngSrc]="logoUrl()" [alt]="'Logo ' + websiteName()" [width]="logoWidth()" [height]="logoHeight()">
         }

@@ -11,8 +11,9 @@
             <a class="inline-block text-center font-bold py-3 px-4 rounded-full dark:bg-primary-600 bg-primary-400" [routerLink]="urlData().routerLink" [fragment]="urlData().fragment">{{ cta.link.label }}</a>
           </div>
         }
-
-      <div class="mt-4 text-neutral-700 dark:text-neutral-300 text-sm">{{ cta.incentiveSentence }}</div>
+      @if (cta.incentiveSentence) {
+        <div class="mt-4 text-neutral-700 dark:text-neutral-300 text-sm">{{ cta.incentiveSentence }}</div>
+      }
     </div>
   }
 } @else if (SeoKitStyle === 'yankees') {
@@ -24,8 +25,9 @@
       } @else {
         <a class="inline-block text-center yankees-cut yankees-cut-hover transition-colors font-bold py-3 px-4 dark:bg-primary-600 bg-primary-400 hover:bg-primary-200 hover:dark:bg-primary-400" [routerLink]="urlData().routerLink" [fragment]="urlData().fragment">{{ cta.link.label }}</a>
       }
-
-      <div class="mt-2 text-neutral-700 dark:text-neutral-300 text-sm">{{ cta.incentiveSentence }}</div>
+      @if (cta.incentiveSentence) {
+        <div class="mt-2 text-neutral-700 dark:text-neutral-300 text-sm">{{ cta.incentiveSentence }}</div>
+      }
     </div>
   }
 }

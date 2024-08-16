@@ -28,6 +28,10 @@ export class HeaderComponent {
   protected readonly logoHeight = signal(seokLogoHeight);
   protected readonly websiteName = signal(seokWebsiteName);
 
+  homePathByLang: Record<string, string> = {
+    'en': '/',
+  }
+
   linksByLang: Record<string, Link[]> = {
     'en': [
       {url: ExamplePillarUrl, label: 'Example Pillar'},
@@ -38,5 +42,10 @@ export class HeaderComponent {
   links = computed(() => {
     const lang = this.lang();
     return this.linksByLang[lang] ?? [];
+  });
+
+  homePath = computed(() => {
+    const lang = this.lang();
+    return this.homePathByLang[lang] ?? '/';
   });
 }

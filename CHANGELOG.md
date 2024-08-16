@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.2] - 2024-08-16
+
+### Fix
+
+- Prices features vertical align.
+- pages.styles.scss : remove `font-size: 1.5rem` on all element centered and update `max-w-prose` to `max-w-screen-md`.
+- Display CTA incentive div only if there is a value.
+- Handle of home path by lang.
+- Update affiliation program url [https://seo-kit-io.lemonsqueezy.com/affiliates](https://seo-kit-io.lemonsqueezy.com/affiliates).
+- Add affiliation links to Surfer and Frase.io in documentation.
+
 ## [1.0.1] - 2024-08-12
 
 ### Add

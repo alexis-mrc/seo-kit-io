@@ -49,6 +49,10 @@ You are permitted to use this boilerplate only if you have purchased it. You can
 
 For support, contact: alexis-mrc at support@seo-kit.io
 
+## Note
+
+Please note that some of the links in this documentation are affiliate links. This means that if you click on one of these links and make a purchase or sign up for a service, we may earn a commission at no additional cost to you. We only recommend products or services that we genuinely believe will add value to our users, and we appreciate your support through these affiliate links.
+
 ---
 
 We hope this boilerplate helps you achieve great SEO results for your websites. Happy building!

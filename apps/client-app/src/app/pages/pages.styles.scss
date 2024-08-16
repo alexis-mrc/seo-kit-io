@@ -12,8 +12,7 @@
   }
 
   > *:not(.not-centered) {
-    font-size: 1.5rem;
-    @apply mx-auto px-4 max-w-prose;
+    @apply mx-auto px-4 max-w-screen-md;
   }
 
   * {
