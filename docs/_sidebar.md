@@ -12,5 +12,4 @@
   - [Bonus](en/10-pages-bonus)
 - [Build and Deploy](en/11-build-and-deploy)
 - Bonus
-  - [Affiliate program](en/12-affiliate)
-  - [SEO friendly content](en/13-seo-friendly-content)
+  - [SEO friendly content](en/12-seo-friendly-content)
