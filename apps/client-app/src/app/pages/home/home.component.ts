@@ -44,7 +44,7 @@ export class HomeComponent {
     ],
     "cta": {
       "link": {
-        "url": "/",
+        "url": "/#pricing",
         "label": "Get started"
       },
       "incentiveSentence": "launch your SEO strategy today!"
@@ -62,6 +62,8 @@ export class HomeComponent {
       link: '/setup-seo-kit.webp',
       objectFit: 'scale-down',
     },
+    width: "1405",
+    height: "429",
     imageFirst: false,
   });
 
@@ -76,6 +78,8 @@ export class HomeComponent {
       link: '/configure-preview.webp',
       objectFit: 'scale-down',
     },
+    width: "769",
+    height: "304",
     imageFirst: true,
   });
 
@@ -90,6 +94,8 @@ export class HomeComponent {
       link: '/seo-strategy.webp',
       objectFit: 'scale-down',
     },
+    width: "900",
+    height: "452",
     imageFirst: false,
   });
 
@@ -105,6 +111,8 @@ export class HomeComponent {
       objectFit: 'scale-down',
 
     },
+    width: "947",
+    height: "331",
     imageFirst: true,
   });
 
@@ -119,6 +127,8 @@ export class HomeComponent {
       link: '/pagespeed-seo-kit.webp',
       objectFit: 'scale-down',
     },
+    width: "1856",
+    height: "1058",
     imageFirst: false,
   });
 
@@ -133,6 +143,8 @@ export class HomeComponent {
       link: '/organic-traffic.webp',
       objectFit: 'scale-down',
     },
+    width: "870",
+    height: "310",
     imageFirst: true,
   });
 
@@ -146,8 +158,8 @@ export class HomeComponent {
   pricingitem = signal<PricesData>({
     plans: [
       {
-        name: 'Solo 💪',
-        popular: '',
+        name: 'Maker 🚀',
+        popular: 'Everything you needed',
         prices: [
           {
             strokedValue: '149€',
@@ -157,68 +169,15 @@ export class HomeComponent {
           },
         ],
         features: [
-          {
-            aviable: true,
-            label: 'Built with Angular 18 with performance optimization',
-          },
+          { aviable: true, label: 'Angular 18 with performance optimization' },
           { aviable: true, label: 'Tailwind CSS for effortless styling' },
-          {
-            aviable: true,
-            label: 'Nx for scalable and maintainable structure',
-          },
-          { aviable: true, label: 'One-click deployment to Firebase' },
-          { aviable: true, label: 'Preview deployment with Firebase' },
+          { aviable: true, label: 'One-click preview and deployment to Firebase' },
           { aviable: true, label: 'Option to deploy on any server' },
           { aviable: true, label: 'SEO-optimized structure' },
-          { aviable: true, label: 'Web CLI for configuration and preview' },
           { aviable: true, label: 'Automatic sitemap generation' },
-          { aviable: true, label: 'Extensive documentation' },
+          { aviable: true, label: 'Extensive documentation : customization and quick addition of new pillar/child pages' },
           { aviable: true, label: 'Regular updates and upcoming features' },
-          {
-            aviable: false,
-            label: 'Guide for building pillar page/child page strategy',
-          },
-          { aviable: false, label: 'Discord community' },
-        ],
-        cta: {
-          link: { url: '', label: 'Coming soon' },
-          incentiveSentence: 'Pay once. Build unlimited projects!',
-        },
-      },
-      {
-        name: 'Maker 🚀',
-        popular: 'Everything you needed',
-        prices: [
-          {
-            strokedValue: '179€',
-            value: '119€',
-            duration: 'once',
-            offText: '50€ off during launching',
-          },
-        ],
-        features: [
-          {
-            aviable: true,
-            label: 'Built with Angular 18 with performance optimization',
-          },
-          { aviable: true, label: 'Tailwind CSS for effortless styling' },
-          {
-            aviable: true,
-            label: 'Nx for scalable and maintainable structure',
-          },
-          { aviable: true, label: 'One-click deployment to Firebase' },
-          { aviable: true, label: 'Preview deployment with Firebase' },
-          { aviable: true, label: 'Option to deploy on any server' },
-          { aviable: true, label: 'SEO-optimized structure' },
-          { aviable: true, label: 'Web CLI for configuration and preview' },
-          { aviable: true, label: 'Automatic sitemap generation' },
-          { aviable: true, label: 'Extensive documentation' },
-          { aviable: true, label: 'Regular updates and upcoming features' },
-          {
-            aviable: true,
-            label: 'Guide for building pillar page/child page strategy',
-          },
-          { aviable: true, label: 'Discord community' },
+          { aviable: true, label: 'Guide for building pillar page/child page strategy', }
         ],
         cta: {
           link: { url: '', label: 'Coming soon' },
@@ -243,7 +202,7 @@ export class HomeComponent {
       {
         question: 'How do I get started with seo-kit-boilerplate?',
         response:
-          'First, clone the repository from GitHub, install the dependencies using npm install, and start the web CLI with npm start.',
+          'Just follow the README.md of the repository: 9 simples steps and you are ready to build in less than 15min!',
       },
       {
         question: 'Can I deploy my site on any server?',
@@ -256,11 +215,6 @@ export class HomeComponent {
           'The main features include using Angular 18, Tailwind CSS, Nx, and easy deployment options for Firebase or any server.',
       },
       {
-        question: 'What is the project structure of seo-kit-boilerplate?',
-        response:
-          'The project includes apps/client-app, apps/webcli-app, seok-config-files, libs/seok-sdk, libs/seok-ui, and sitemap logic.',
-      },
-      {
         question: 'How can I configure and preview my client app?',
         response:
           'You can configure and preview your client app using the web CLI.',
@@ -268,12 +222,17 @@ export class HomeComponent {
       {
         question: 'What is included in the upcoming features?',
         response:
-          "Upcoming features include an SEO Guide to build your pillar page/child page strategy and a Technical Guide explaining how to improve an Angular app's SEO.",
+          "More components and more styles choices. You can update your project simply with a single pull from Github.",
       },
       {
-        question: 'Can I edit the files generated by the web CLI and seok-sdk?',
+        question: 'How works SEO KIT?',
         response:
-          'Files in the src/generated directory should not be edited as they may be overwritten. You can edit files in the src/app directory, but some changes may affect the functionality provided by the web CLI.',
+          'SEO KIT works by reading the files of the project and extracting the necessary data to edit them easily. Web CLI overwrites these files with minimal configuration required. Your project feels like a classic Angular project.'
+      },
+      {
+        question: 'Can I edit the files generated by the web CLI?',
+        response:
+          'Yes, you can edit the files generated by the web CLI directly, just as you would with any other part of your project. However, it\'s important to note that the xxxx.page.ts files should maintain their original structure to ensure that the SEO KIT functions correctly.',
       },
       {
         question: 'What is the license for seo-kit-boilerplate?',

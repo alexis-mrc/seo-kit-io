@@ -4,6 +4,12 @@ import {NgOptimizedImage} from "@angular/common";
 import { Link, SEO_KIT_STYLE, SeoKitStyle } from '@seo-kit-boilerplate/seok-ui';
 import {seokContactEmail} from "@seo-kit-boilerplate/seok-generated/settings";
 import { LangService } from '@seo-kit-boilerplate/seok-core/lang';
+import { url as LegalNoticeUrl } from '../pages/legal-notice/legal-notice.page';
+import { url as PrivacyUrl } from '../pages/privacy/privacy.page';
+import { url as ToSUrl } from '../pages/terms-of-service/terms-of-service.page';
+import { url as FrLegalNoticeUrl } from '../pages/fr-legal-notice/fr-legal-notice.page';
+import { url as FrPrivacyUrl } from '../pages/fr-privacy/fr-privacy.page';
+import { url as FrToSUrl } from '../pages/fr-terms-of-service/fr-terms-of-service.page';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -21,8 +27,14 @@ export class FooterComponent {
 
   linksByLang: Record<string, Link[]> = {
     'en': [
+      {url: ToSUrl, label: 'Terms of Service'},
+      {url: LegalNoticeUrl, label: 'Legal Notice'},
+      {url: PrivacyUrl, label: 'Privacy'},
     ],
     'fr': [
+      {url: FrToSUrl, label: 'CGU/CGV'},
+      {url: FrLegalNoticeUrl, label: 'Mentions Légales'},
+      {url: FrPrivacyUrl, label: 'Charte du respect de la vie privée'},
     ],
   };
 

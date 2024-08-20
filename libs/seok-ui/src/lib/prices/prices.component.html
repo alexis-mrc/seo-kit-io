@@ -38,9 +38,9 @@
       @if (SeoKitStyle === 'default') {
         <div class="grid grid-cols-1 lg:grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] mx-auto mt-10 gap-20 max-w-screen-xl">
           @for (plan of plans; track plan; let planIndex = $index) {
-            <div [ngClass]="plan.popular ? 'border-primary-400 dark:border-primary-600' : ''" class="relative overflow-hidden block bg-neutral-50/30 dark:bg-neutral-900/30 mb-6 p-6 rounded-lg md:rounded-2xl border border-solid border-neutral-300 dark:border-neutral-800">
+            <div class="relative overflow-hidden block bg-neutral-50/30 dark:bg-neutral-900/30 mb-6 p-6 rounded-lg md:rounded-2xl border border-solid border-neutral-300 dark:border-neutral-800">
               @if (plan.popular) {
-                <div class="absolute top-0 left-0 py-2 font-semibold right-0 mx-auto text-center bg-primary-400 dark:bg-primary-600">{{ plan.popular }}</div>
+                <div class="absolute top-0 left-0 py-2 font-semibold right-0 mx-auto text-center dark:text-primary-50 text-primary-950 border-b border-solid border-neutral-300 dark:border-neutral-800">{{ plan.popular }}</div>
               }
 
               <h2 class="mt-10 text-neutral-700 dark:text-neutral-300">{{ plan.name }}</h2>

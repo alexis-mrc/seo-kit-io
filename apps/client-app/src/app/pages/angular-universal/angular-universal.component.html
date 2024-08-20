@@ -1,0 +1,100 @@
+<main>
+<h1>Angular Universal Transition to &#64;angular/ssr since Angular 17</h1>
+<p>Angular 17 introduces &#64;angular/ssr, evolving from Angular Universal. This update enhances server-side rendering and static site generation, streamlining setup and boosting performance.</p>
+<h2><strong>Angular Universal :</strong> the initial server implementation focused</h2>
+<h3>What is Angular Universal ?</h3>
+<p>Angular Universal is a tool for Angular applications that enables <strong>server-side rendering (SSR)</strong>. It generates the <strong>initial HTML</strong> on the server during the initial request on node express server, allowing web pages to load faster and be more accessible to <strong>search engines</strong>. The setup involves the universal engine server.</p>
+<h4>how angular universal works ?</h4>
+  <p>Initially, Angular Universal processes the initial <strong>server request</strong> to create a fully rendered page, which is crucial for <a [routerLink]="['/', angularSeoUrl]">improving <strong>Angular SEO</strong></a>. By delivering fully rendered HTML from the server, it enhances the user experience by reducing the time until content is visible, compared to <strong>client side rendering</strong> alone. This setup involves the <strong>universal engine server</strong>, which renders the <strong>Angular application</strong> on the server side before sending it to the client. Consequently, the <strong>client side app</strong> benefits from a quicker initial load and better interaction with <strong>search engines</strong>, as it delivers a more complete and SEO-friendly version of the page from the start.</p>
+<h3>Challenges of Implementing Angular Universal for Server-Side Rendering</h3>
+<p>Implementing Angular Universal for server-side rendering (SSR) proved challenging due to its complexity and integration needs. Setting up SSR required configuring the server environment for Angular applications, which was intricate for those unfamiliar with server-side tech. Ensuring that <strong>server-side rendered content</strong> matched the <strong>client-side app</strong> was difficult, particularly with dynamic content. Debugging and optimizing the <strong>initial server request</strong> and <strong>initial HTML</strong> to meet <strong>search engine</strong> standards and performance metrics added to the challenge. Transitioning from <strong>client-side rendering</strong> to SSR involved a deep understanding of Angular and server configurations, complicating the development process.</p>
+<h2><strong>Angular Universal Evolution to &#64;angular/ssr in Angular 17</strong></h2>
+<h3>What is the difference between Angular universal and <strong>&#64;angular/ssr</strong> ?</h3>
+<p><strong>Angular Universal</strong> and <strong>&#64;angular/ssr</strong> represent different phases in Angular’s evolution. <strong>Angular Universal</strong> was the original tool for <strong>server-side rendering (SSR)</strong>, while <strong>&#64;angular/ssr</strong> is the updated, integrated solution since Angular 17.</p>
+<p><strong>Angular Universal</strong> and <strong>&#64;angular/ssr</strong> both facilitate <strong>server side rendering (SSR)</strong>, but they differ in implementation and integration. <strong>Angular Universal</strong> was the earlier solution for generating <strong>initial HTML</strong> and <strong>server rendered DOM structures</strong>. It focused on producing a fully-rendered page on the server to improve performance and SEO. <strong>&#64;angular/ssr</strong>, introduced in Angular 17, streamlines this process within the Angular ecosystem. It enhances <strong>initial application rendering</strong> by integrating directly with the Angular CLI, offering a more efficient approach to handling <strong>initial HTML request</strong> and simplifying the setup and maintenance of <strong>server side rendered</strong> applications.</p>
+<h2><strong>The Advantages of &#64;angular/ssr for Angular server side rendering</strong></h2>
+<h3>What is Hydration in server side rendered application ?</h3>
+<p><strong>Hydration</strong> in a server-side rendered application is the process of attaching client-side JavaScript to the already rendered HTML. This enables dynamic interactions on a page initially loaded with static content.</p>
+<p>In detail, <strong>hydration</strong> involves <strong>restoring</strong> the server-side rendered HTML with client-side functionality. When a page is loaded, the server sends fully-rendered HTML to the client. Once the page is loaded in the browser, <strong>hydration</strong> kicks in by running JavaScript to make the static content interactive. This process <strong>reduces cumulative layout shift</strong>, ensuring that the page remains visually stable as JavaScript components are activated. Hydration helps in improving performance and <strong>search engine optimization</strong> by delivering fully rendered content quickly while allowing for dynamic features and interactions.</p>
+<h3>How Hydration works with angular server side rendering ?</h3>
+<p><strong>Hydration</strong> with Angular server-side rendering (SSR) involves enhancing pre-rendered HTML with client-side interactivity. The server sends fully rendered HTML to the client, and Angular then attaches the necessary JavaScript to enable dynamic features.</p>
+<seok-image-presentation [data]='{
+    img: {
+      alt: "Angular Hydration in Chrome DevTools",
+      link: "/angular-hydration.webp",
+      objectFit: "contains",
+      caption: "Angular Hydration in Chrome DevTools"
+    },
+
+    priority: true,
+  }'></seok-image-presentation>
+<p>In more detail, Angular performs <strong>hydration</strong> by first delivering <strong>pre-rendered HTML</strong> to the client, which ensures that users see a fully-formed page quickly. Once this HTML is loaded, Angular’s JavaScript framework initializes, <strong>attaching event handlers</strong> and connecting <strong>client-side components</strong> to the already present HTML. During this process, Angular handles <strong>transferring application data</strong>, synchronizing state and ensuring that the interactive elements of the page function as intended. This process helps in minimizing layout shifts and improving overall user experience by maintaining visual stability while transitioning to a fully interactive application.</p>
+<h3>How capturing user interactions with Event Replay works ?</h3>
+<p><strong>Event Replay</strong> in Angular captures user interactions that occur before hydration and replays them once the client-side application becomes interactive. This ensures a seamless experience by preserving the state and actions taken by users during the server-to-client transition.</p>
+<seok-image-presentation [data]='{
+    img: {
+      alt: "Adding 4 items with Event Replay after app is initialized (https://blog.angular.dev/angular-v18-is-now-available-e79d5ac0affe)",
+      link: "https://miro.medium.com/v2/resize:fit:1400/format:webp/0*jLKc9qAJotWNTm84",
+      objectFit: "contains",
+      caption: "Adding 4 items with Event Replay after app is initialized (https://blog.angular.dev/angular-v18-is-now-available-e79d5ac0affe)"
+    },
+  }'></seok-image-presentation>
+<p>When a user interacts with a page rendered by the server, such as clicking buttons or filling out forms, these interactions are temporarily stored. After Angular completes the hydration process, it replays these stored events to maintain a continuous and responsive user experience. This <strong>event replay</strong> mechanism ensures that no actions are lost and users do not experience interruptions or delays. By capturing and replaying user interactions, Angular enhances the fluidity of client-side experiences and prevents frustrating gaps between initial server-side rendering and full client-side functionality.</p>
+<h3>AfterRender and AfterNextRender in Angular SSR</h3>
+<p><strong>AfterRender</strong> and <strong>AfterNextRender</strong> are lifecycle hooks introduced in Angular’s server-side rendering (SSR) environment to manage the timing and sequence of content rendering. These hooks provide fine-grained control over when specific code executes in relation to the rendering phases, particularly useful for optimizing and debugging SSR applications.</p>
+<p><strong>AfterRender</strong> is invoked after the initial server-side rendering has completed. This hook is essential for executing code that depends on the server-rendered content. It allows developers to perform actions or make modifications to the DOM once the initial HTML has been fully rendered and sent to the client. This ensures that any post-render adjustments do not interfere with the server-rendered content but are applied immediately after it.</p>
+<p><strong>AfterNextRender</strong> is triggered after the subsequent client-side rendering phase. This hook is useful for scenarios where you need to execute code after Angular has taken over on the client side and applied additional updates or changes. It is particularly helpful for dealing with content that may change dynamically or needs to be adjusted after the initial hydration process.</p>
+<p>Together, <strong>AfterRender</strong> and <strong>AfterNextRender</strong> enhance Angular’s ability to handle complex rendering scenarios, ensuring a smooth transition from server-rendered to client-rendered content while allowing for precise control over the rendering lifecycle. In some cases, it can be used instead of isPlatformBrowser or isPlatformServer to not execute code on platform server to avoid errors when using browser specific global objects.</p>
+<h2><strong>Simplified Integration: Streamlining Setup with Angular CLI</strong></h2>
+<h3>How to add &#64;angular/ssr using angular CLI to i<strong>mplement Server-Side Rendering (SSR)</strong> ?</h3>
+<p>To integrate <strong>`&#64;angular/ssr`</strong> into your Angular project, follow these <a href="https://angular.dev/guide/ssr">steps to enable server-side rendering</a> (SSR):</p>
+<ol>
+<li>
+<p><strong>Install `&#64;angular/ssr`</strong>: Use the Angular CLI to add SSR capabilities to your existing Angular application. Run the following command:</p>
+<pre><code class="mt-3 rounded-lg" highlight="ng add @angular/ssr" language="shell"></code></pre>
+</li>
+<li>
+<p><strong>Configure the Project</strong>: After installation, the CLI will automatically set up the necessary files and configurations for SSR. This includes creating a `server.ts` file and updating the `angular.json` configuration.</p>
+</li>
+<li>
+<p><strong>Build and Serve</strong>: To build your Angular app with SSR, use:</p>
+  <pre><code class="mt-3 rounded-lg" highlight="ng build &#x26;&#x26; ng run your-project-name:server" language="shell"></code></pre>
+  <p>Replace `your-project-name` with the name of your Angular project.</p>
+</li>
+<li>
+  <p><strong>Serve the Application</strong>: Use Node.js to serve the server-side rendered content. Run:</p>
+  <pre><code class="mt-3 rounded-lg" highlight="node dist/server/main.js" language="shell"></code></pre>
+  <p>This will start the server and render your application on the server side.</p>
+</li>
+<li>
+<p><strong>Verify SSR Implementation</strong>: Check the server-side rendering by inspecting the initial HTML served. Use Chrome Dev Tools to view the complete HTML content in the Network tab or by viewing the page source.</p>
+</li>
+</ol>
+<seok-image-presentation [data]='{
+    img: {
+      alt: "Checking <app-root> content in Chrome DevTools Network",
+      link: "/angular-check-ssr-network.webp",
+      objectFit: "contains",
+      caption: "Checking <app-root> content in Chrome DevTools Network"
+    },
+  }'></seok-image-presentation>
+<p>By following these steps, you’ll integrate `&#64;angular/ssr` into your Angular application, enabling efficient server-side rendering and improving performance and SEO.</p>
+<h3>How to check if you <a [routerLink]="['/', angularSeoUrl]">angular application is SEO ready</a> ?</h3>
+<p>To ensure your Angular application is SEO ready, verify that the server delivers fully rendered HTML and not just the &#x3C; app-root> component. Use <strong>Chrome DevTools</strong> to inspect the <strong>network</strong> tab and view the complete HTML.</p>
+<p>For a thorough check, open Chrome DevTools and navigate to the <strong>Network</strong> tab. Reload your page and look for the initial HTML request. Ensure the response contains the complete HTML content, not just a minimal app-root tag. Additionally, check the <strong>View Page Source</strong> option to confirm the server delivers static, fully-rendered HTML. This ensures that search engines can index the content effectively, and your application benefits from improved <strong>search engine optimization (SEO)</strong>. Static Site Generation (SSG) or server-side rendering (SSR) should be correctly implemented to provide fully rendered pages on initial request.</p>
+<h3><strong>Implementing Static Site Generation (SSG) / Prerendering with &#64;angular/ssr</strong></h3>
+<h4><strong>Enabling Prerendering for Static HTML Generation</strong></h4>
+<p>To enable <strong>prerendering</strong> with &#64;angular/ssr for <strong>prerendering for static HTML generation</strong>, you first need to set up your Angular application to use server-side rendering (SSR). This involves installing &#64;angular/ssr and configuring your project. Once SSR is in place, you can leverage the prerendering capabilities to generate static HTML files during the build process, allowing your application to deliver fully rendered content faster and more efficiently.</p>
+<h4><strong>Configuring Prerendering Options in Angular CLI</strong></h4>
+<p>With SSR enabled, <a href="https://angular.dev/guide/prerendering">configure prerendering in your Angular application using Angular CLI</a>. Open your angular.json file and locate the build options for your application. Set the prerender option to true or provide a configuration object to fine-tune prerendering. This setup controls how Angular CLI discovers and generates static pages based on your routing configuration. Default settings will cover most needs, but you can adjust parameters for more specific requirements.</p>
+<h4><strong>Creating and Using routes.txt for Parameterized Routes</strong></h4>
+<p>For applications with parameterized routes, such as product pages with dynamic IDs, create a routes.txt file listing each route you want to prerender. Each line in the file should contain a URL path for the route. This file helps Angular CLI generate static HTML for these dynamic routes. For example, routes.txt might include /products/1 and /products/555. Configure the routesFile option in your Angular CLI build configuration to use this file during the build process.</p>
+<h4><strong>Building and Verifying Prerendered Pages</strong></h4>
+<p>After configuring prerendering, run the build command (ng build). Angular CLI will process your routes and generate static HTML files based on the specified configuration. To verify that prerendering has worked correctly, check the output directory for static files and ensure that the pages are correctly rendered. Use tools like Chrome DevTools to inspect the generated HTML and confirm that the content is fully rendered and functional. This verification step is crucial to ensure that prerendered pages meet your performance and SEO requirements.</p>
+<h3><strong>Handling Dynamic Content in SSR</strong></h3>
+<p><strong>Dynamic content</strong> requires server-side rendering (SSR) because it generates pages based on real-time data or user-specific requests. Unlike static site generation (SSG), which pre-builds pages at compile time to optimize initial load time, SSR can handle dynamic routes and content by fetching and rendering data on each request.</p>
+<p><strong>Prerendering (SSG)</strong> is not suitable for dynamic content as it only generates static HTML files during the build process, lacking the capability to update content based on user interactions or real-time data. For applications requiring real-time content, SSR is the appropriate choice.</p>
+<h2>Conclusion: Transitioning to &#64;angular/ssr for Improved Performance and SEO</h2>
+<p>Switching to <strong>&#64;angular/ssr</strong> brings several significant benefits over the legacy <strong>Angular Universal</strong>. It enhances performance by enabling efficient <strong>server-side rendering (SSR)</strong> and <strong>static site generation (SSG)</strong>, providing faster page loads and improved <strong>search engine optimization (SEO)</strong>. With <strong>hydration</strong> and <strong>event replay</strong>, applications can deliver a smooth, interactive user experience while maintaining high performance.</p>
+<p>The transition to <strong>&#64;angular/ssr</strong> simplifies integration, reduces <strong>cumulative layout shifts</strong>, and ensures <strong>fully rendered HTML</strong> is available for <strong>search engines</strong>. This change helps meet modern performance standards and improves <strong>core web vitals</strong>, contributing to better SEO outcomes and a more engaging user experience. For any Angular application looking to optimize performance and SEO, adopting <strong>&#64;angular/ssr</strong> is a strategic move that aligns with the latest web development practices without big changes in your application code.</p>
+</main>

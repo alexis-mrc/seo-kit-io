@@ -9,6 +9,7 @@ import {
   seokWebsiteName
 } from "@seo-kit-boilerplate/seok-generated/settings";
 import { LangService } from '@seo-kit-boilerplate/seok-core/lang';
+import { url as AngularSEOUrl } from '../pages/angular-seo/angular-seo.page';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -27,8 +28,14 @@ export class HeaderComponent {
   protected readonly logoHeight = signal(seokLogoHeight);
   protected readonly websiteName = signal(seokWebsiteName);
 
+  homePathByLang: Record<string, string> = {
+    'en': '/',
+    'fr': '/fr'
+  }
+
   linksByLang: Record<string, Link[]> = {
     'en': [
+      {url: AngularSEOUrl, label: 'Angular SEO'}
     ],
     'fr': [
     ],
@@ -38,5 +45,10 @@ export class HeaderComponent {
   links = computed(() => {
     const lang = this.lang();
     return this.linksByLang[lang] ?? [];
+  });
+
+  homePath = computed(() => {
+    const lang = this.lang();
+    return this.homePathByLang[lang] ?? '/';
   });
 }
