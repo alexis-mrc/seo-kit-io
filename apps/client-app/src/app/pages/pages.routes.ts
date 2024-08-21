@@ -1,4 +1,8 @@
 import {
+  url as FrAngularSeoUrl,
+  state as FrAngularSeoState,
+} from './fr-angular-seo/fr-angular-seo.page';
+import {
   url as AngularUniversalUrl,
   state as AngularUniversalState,
 } from './angular-universal/angular-universal.page';
@@ -187,6 +191,20 @@ export const pagesRoutes: Route[] = [
             ),
           data: {
             sitemap: 'angular-universal/angular-universal.sitemap.json',
+          },
+        },
+      ]
+    : []),
+  ...('published' === FrAngularSeoState
+    ? [
+        {
+          path: FrAngularSeoUrl,
+          loadComponent: () =>
+            import('./fr-angular-seo/fr-angular-seo.component').then(
+              (m) => m.FrAngularSeoComponent
+            ),
+          data: {
+            sitemap: 'fr-angular-seo/fr-angular-seo.sitemap.json',
           },
         },
       ]

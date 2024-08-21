@@ -1,6 +1,14 @@
 # Pages - Creating a Pillar Page
 
-## Using Surfer for Keyword Research and Content Creation
+## Overview
+
+Pillar pages serve as the cornerstone of your website’s content strategy. These are comprehensive, high-value pages designed to target broad topics within your niche. By covering a wide range of subtopics under a central theme, pillar pages provide in-depth information that addresses the primary questions and needs of your audience.
+
+Due to their extensive coverage and strategic keyword targeting, these pages are highly effective at attracting organic traffic from search engines. They are meticulously crafted to rank first for key targeted keywords, establishing your site as an authoritative source on the subject. As foundational content pieces, pillar pages not only draw in significant search engine traffic but also guide visitors to related content within your site, enhancing user engagement and driving further exploration.
+
+## Creating a Child Page
+
+### Using Surfer for Keyword Research and Content Creation
 
 **Surfer** helps you with keyword research and content creation in the following ways:
 
@@ -8,7 +16,7 @@
 - **Content Editor**: Once you identify a valuable keyword (with a decent search volume and manageable difficulty), use Surfer's Content Editor to analyze existing results for that keyword. This tool provides writing suggestions and helps generate a content outline. For faster content generation, you might use ChatGPT, but detailed guidance on this will be covered in another page.
 - **Markdown Export**: After drafting your content using Surfer's Content Editor, click the `...` in the top-right corner and select `Export as Markdown`. The generated Markdown file can be uploaded directly via the WebCLI for the relevant page. Note that this will overwrite any existing HTML file for that page.
 
-## Our Top Ranking Website Content Was Written Using Surfer
+### Our Top Ranking Website Content Was Written Using Surfer
 
 At SEO Kit, we have leveraged **Surfer** to create some of our top-ranking content. Surfer's advanced SEO tools and content optimization features have been instrumental in achieving high search engine rankings. Here’s how Surfer has helped us:
 
@@ -22,7 +30,7 @@ At SEO Kit, we have leveraged **Surfer** to create some of our top-ranking conte
 
 By integrating Surfer into our content creation process, we’ve been able to produce high-quality, SEO-optimized content that drives traffic and enhances our site’s visibility. We highly recommend using Surfer for anyone looking to improve their content strategy and achieve better search engine rankings.
 
-## Frase.io as an Alternative
+### Frase.io as an Alternative
 
 While Surfer is a powerful tool for SEO content creation, **Frase.io** is another excellent alternative for those looking to optimize their content strategy. Frase.io offers a range of features that can help improve your content’s SEO performance. Here’s an overview of what Frase.io brings to the table:
 
@@ -40,11 +48,11 @@ While Surfer is a powerful tool for SEO content creation, **Frase.io** is anothe
 
 For those looking for a powerful yet user-friendly alternative to Surfer, Frase.io is worth considering. It offers a comprehensive suite of tools to help you create, optimize, and analyze content, ensuring that your SEO efforts are both effective and efficient.
 
-## Manual Creation
+### Manual Creation
 
 Creating a pillar page manually gives you full freedom, but it can be more complex. We recommend using SEO Kit components, especially for images, to maintain design consistency. Alternatively, if Surfer is too costly, consider using other tools like Frase.io for content optimization.
 
-## Adding the Link to the Header
+### Adding the Link to the Header
 
 To include a link to your pillar page in the header:
 
@@ -66,6 +74,6 @@ To include a link to your pillar page in the header:
 
 This configuration ensures that the link appears correctly based on the selected language. The label is what will be displayed in the header, and the URL should be retrieved from the page configuration file to ensure synchronization with WebCLI changes.
 
-## Configuration
+### Configuration
 
 As with all pages, ensure you configure the meta tags and sitemap appropriately for SEO. This includes setting up the meta title, description, and any other relevant meta tags to improve search engine visibility.

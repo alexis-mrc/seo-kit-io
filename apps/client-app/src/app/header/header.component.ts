@@ -10,6 +10,7 @@ import {
 } from "@seo-kit-boilerplate/seok-generated/settings";
 import { LangService } from '@seo-kit-boilerplate/seok-core/lang';
 import { url as AngularSEOUrl } from '../pages/angular-seo/angular-seo.page';
+import { url as FrAngularSEOUrl } from '../pages/fr-angular-seo/fr-angular-seo.page';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -38,6 +39,7 @@ export class HeaderComponent {
       {url: AngularSEOUrl, label: 'Angular SEO'}
     ],
     'fr': [
+      {url: FrAngularSEOUrl, label: 'Angular SEO'}
     ],
   };
 

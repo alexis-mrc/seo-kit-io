@@ -176,8 +176,7 @@ export class HomeComponent {
           { aviable: true, label: 'SEO-optimized structure' },
           { aviable: true, label: 'Automatic sitemap generation' },
           { aviable: true, label: 'Extensive documentation : customization and quick addition of new pillar/child pages' },
-          { aviable: true, label: 'Regular updates and upcoming features' },
-          { aviable: true, label: 'Guide for building pillar page/child page strategy', }
+          { aviable: true, label: 'Regular updates and upcoming features' }
         ],
         cta: {
           link: { url: '', label: 'Coming soon' },
