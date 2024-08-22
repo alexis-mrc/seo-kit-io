@@ -1,12 +1,13 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { setJsonLd } from '@seo-kit-boilerplate/seok-core/json-ld';
-import { updateMetatags } from '@seo-kit-boilerplate/seok-core/metatags';
+import { addAlternateLangHref, updateMetatags } from '@seo-kit-boilerplate/seok-core/metatags';
 import { setLang } from '@seo-kit-boilerplate/seok-core/lang';
 import { metatags, lang } from './fr-angular-seo.page';
 import { ImagePresentationComponent } from '@seo-kit-boilerplate/seok-ui';
 import { Highlight } from 'ngx-highlightjs';
 import { RouterLink } from '@angular/router';
+import { url as enUrl } from '../angular-seo/angular-seo.page';
 
 @Component({
   selector: 'app-fr-angular-seo',
@@ -121,5 +122,6 @@ ngOnInit() {
     setLang(lang);
     setJsonLd();
     updateMetatags(metatags);
+    addAlternateLangHref('en', '/' + enUrl);
   }
 }

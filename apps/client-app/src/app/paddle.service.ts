@@ -19,7 +19,8 @@ export class PaddleService {
         //token: 'live_c52bab719fe02225258ac2c336c'
 
         environment: 'sandbox',
-        token: 'test_0f5f94cd7a91a81e786040606c3' // TEST
+        token: 'test_0f5f94cd7a91a81e786040606c3', // TEST
+        eventCallback: e => console.log(e)
       }).then(paddle => this.paddle.set(paddle))
     });
 

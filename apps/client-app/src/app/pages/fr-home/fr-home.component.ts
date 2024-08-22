@@ -1,7 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { setJsonLd } from '@seo-kit-boilerplate/seok-core/json-ld';
-import { updateMetatags } from '@seo-kit-boilerplate/seok-core/metatags';
+import { addAlternateLangHref, updateMetatags } from '@seo-kit-boilerplate/seok-core/metatags';
 import { setLang } from '@seo-kit-boilerplate/seok-core/lang';
 import { metatags, lang } from './fr-home.page';
 import {
@@ -17,6 +17,7 @@ import {
   PricesData, FaqData
 } from '@seo-kit-boilerplate/seok-ui';
 import { PaddleService } from '../../paddle.service';
+import { url as enUrl } from '../home/home.page';
 
 @Component({
   selector: 'app-fr-home',
@@ -184,7 +185,7 @@ export class FrHomeComponent {
           { aviable: true, label: 'Mises à jour régulières et fonctionnalités à venir' },
         ],
         cta: {
-          link: { url: '', label: 'Acheter' },
+          link: { url: '', label: 'Acheter maintenant' },
           incentiveSentence: 'Payez une fois. Créez des projets illimités !',
         },
       },
@@ -255,5 +256,6 @@ export class FrHomeComponent {
     setLang(lang);
     setJsonLd();
     updateMetatags(metatags);
+    addAlternateLangHref('en', '/' + enUrl);
   }
 }
