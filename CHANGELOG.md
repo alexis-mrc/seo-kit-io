@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.5] - 2024-08-22
+
+### Add
+
+- Add addAlternateLangHref for international website and avoid duplicated content.
+
 ## [1.0.4] - 2024-08-21
 
 ### Update
