@@ -19,7 +19,6 @@
 } @else if (SeoKitStyle === 'yankees') {
   <header class="flex flex-col gap-8 justify-center items-center mx-auto p-8">
     <div class="align-middle">
-
       <a class="text-m font-title flex flex-row gap-2 items-center" [routerLink]="homePath()">
         @if (logoUrl() && logoWidth() && logoHeight()) {
           <img [ngSrc]="logoUrl()" [alt]="'Logo ' + websiteName()" [width]="logoWidth()" [height]="logoHeight()">

@@ -40,3 +40,16 @@ The header and footer of your site are fully customizable, allowing you to add C
 - **Footer Information**: Add additional links, contact information, or a brief description of your business in the footer.
 
 Feel free to experiment and tailor these elements to match your brand and objectives.
+
+## Implementing addAlternateLangHref for International SEO
+
+You can integrate the `addAlternateLangHref` function into your Angular component like this:
+
+```typescript
+constructor() {
+  addAlternateLangHref('en', '/en/sample-page');
+}
+```
+
+### What It Does:
+The `addAlternateLangHref` function adds a `<link>` element to the document's head, signaling the alternate language version of the page. This improves SEO by allowing search engines to recognize and serve the correct language version of your content.
