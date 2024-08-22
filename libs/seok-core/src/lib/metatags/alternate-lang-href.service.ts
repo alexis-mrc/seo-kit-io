@@ -7,7 +7,7 @@ export const addAlternateLangHref = (lang: string, absoluteHref: string) => {
   const renderer = inject(Renderer2);
 
   const linkAlternate = document.createElement('link');
-  linkAlternate.href = absoluteHref;
+  linkAlternate.href = seokWebsiteUrl + absoluteHref;
   linkAlternate.hreflang = lang;
   linkAlternate.rel = 'alternate';
 
