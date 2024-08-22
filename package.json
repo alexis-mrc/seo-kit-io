@@ -40,6 +40,7 @@
     "@angular/ssr": "~18.0.0",
     "@nx/angular": "19.1.0",
     "@nx/devkit": "19.1.0",
+    "@paddle/paddle-js": "^1.2.1",
     "@xterm/addon-fit": "^0.10.0",
     "@xterm/xterm": "^5.5.0",
     "chroma-js": "^2.4.2",

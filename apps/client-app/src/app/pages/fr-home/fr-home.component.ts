@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { setJsonLd } from '@seo-kit-boilerplate/seok-core/json-ld';
 import { updateMetatags } from '@seo-kit-boilerplate/seok-core/metatags';
@@ -16,6 +16,7 @@ import {
   BigTitleData,
   PricesData, FaqData
 } from '@seo-kit-boilerplate/seok-ui';
+import { PaddleService } from '../../paddle.service';
 
 @Component({
   selector: 'app-fr-home',
@@ -26,6 +27,8 @@ import {
   host: { ngSkipHydration: 'true' },
 })
 export class FrHomeComponent {
+
+  paddleService = inject(PaddleService);
 
   catchphraseData = signal<CatchphraseData>({
     "catchphrase": [
@@ -166,7 +169,7 @@ export class FrHomeComponent {
           {
             strokedValue: '149€',
             value: '99€',
-            duration: 'une fois',
+            duration: 'une fois (HT)',
             offText: '50€ de réduction pendant le lancement',
           },
         ],
@@ -181,7 +184,7 @@ export class FrHomeComponent {
           { aviable: true, label: 'Mises à jour régulières et fonctionnalités à venir' },
         ],
         cta: {
-          link: { url: '', label: 'Bientôt disponible' },
+          link: { url: '', label: 'Acheter' },
           incentiveSentence: 'Payez une fois. Créez des projets illimités !',
         },
       },
