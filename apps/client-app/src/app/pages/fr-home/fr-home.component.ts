@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, ElementRef, inject, signal, viewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { setJsonLd } from '@seo-kit-boilerplate/seok-core/json-ld';
 import { addAlternateLangHref, updateMetatags } from '@seo-kit-boilerplate/seok-core/metatags';
@@ -18,6 +18,7 @@ import {
 } from '@seo-kit-boilerplate/seok-ui';
 import { PaddleService } from '../../paddle.service';
 import { url as enUrl } from '../home/home.page';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-fr-home',
@@ -30,6 +31,8 @@ import { url as enUrl } from '../home/home.page';
 export class FrHomeComponent {
 
   paddleService = inject(PaddleService);
+
+  dialogSuccess = viewChild.required('dialogSuccess', {read: ElementRef<HTMLDialogElement>});
 
   catchphraseData = signal<CatchphraseData>({
     "catchphrase": [
@@ -257,5 +260,9 @@ export class FrHomeComponent {
     setJsonLd();
     updateMetatags(metatags);
     addAlternateLangHref('en', '/' + enUrl);
+
+    this.paddleService.checkoutCompleted$.pipe(takeUntilDestroyed()).subscribe(e => {
+      this.dialogSuccess().nativeElement.showModal();
+    });
   }
 }

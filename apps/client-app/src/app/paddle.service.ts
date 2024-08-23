@@ -2,15 +2,23 @@ import { afterNextRender, computed, inject, Injectable, signal } from '@angular/
 import { initializePaddle, Paddle } from '@paddle/paddle-js';
 import { SeokPricesService } from '../../../../libs/seok-ui/src/lib/prices/prices.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { LangService } from '@seo-kit-boilerplate/seok-core/lang';
+import { Subject } from 'rxjs';
+import { PaddleEventData } from '@paddle/paddle-js/types/checkout/checkout';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PaddleService {
 
+  langService = inject(LangService);
+
   paddle = signal<Paddle | undefined>(undefined);
 
   isReady = computed(() => !!this.paddle());
+
+  private checkoutCompleted = new Subject<PaddleEventData>();
+  checkoutCompleted$ = this.checkoutCompleted.asObservable();
 
   constructor() {
     afterNextRender(() => {
@@ -20,7 +28,16 @@ export class PaddleService {
 
         environment: 'sandbox',
         token: 'test_0f5f94cd7a91a81e786040606c3', // TEST
-        eventCallback: e => console.log(e)
+        eventCallback: e => {
+          if (e.name === 'checkout.completed') {
+            const paddle = this.paddle();
+
+            if (paddle) {
+              paddle.Checkout.close();
+            }
+            this.checkoutCompleted.next(e);
+          }
+        }
       }).then(paddle => this.paddle.set(paddle))
     });
 
@@ -29,7 +46,7 @@ export class PaddleService {
       if (paddle) {
         paddle.Checkout.open({
           settings: {
-            displayMode: "overlay",
+            displayMode: "overlay"
           },
           discountCode: 'LAUNCH',
           items: [{
@@ -42,5 +59,4 @@ export class PaddleService {
       }
     })
   }
-
 }

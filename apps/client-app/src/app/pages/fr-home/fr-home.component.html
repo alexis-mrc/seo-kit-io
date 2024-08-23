@@ -1,3 +1,20 @@
+<dialog #dialogSuccess class="not-centered max-w-prose w-[90%] p-4 rounded-2xl">
+  <div class="bg-green-200 text-green-500 w-[48px] h-[48px] mx-auto rounded-full p-2">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="oi sl aye"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path></svg>
+  </div>
+
+  <h2 class="!mt-2 text-center">Paiement Réussi !</h2>
+
+  <p>
+    Une invitation pour rejoindre notre repository GitHub va être envoyée à l'email renseigné lors du paiement.
+  </p>
+  <p>
+    Si vous ne recevez pas cet email ou si l'invitation doit être envoyée à un autre compte GitHub, veuillez contacter notre support à l'adresse suivante&nbsp;: <span class="font-bold">support&#64;seo-kit.io</span>.
+  </p>
+
+  <button class="inline-block text-center font-bold py-3 px-4 mt-6 w-full rounded-full dark:bg-primary-600 bg-primary-400" (click)="dialogSuccess.close()">Fermer</button>
+</dialog>
+
 <div class="-z-10 not-centered top-0 left-0 w-full h-0 overflow-x-clip relative pointer-events-none">
   <svg class="translate-x-[-50%]" viewBox="0 0 1241 1241" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g opacity="0.5" filter="url(#filter0_f_2_135)">
