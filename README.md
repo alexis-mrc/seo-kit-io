@@ -111,6 +111,13 @@ To keep your project up-to-date with the latest changes from the SEO Kit Boilerp
 
 You are permitted to use this boilerplate only if you have purchased it. You can build unlimited sites with SEO Kit, but you cannot resell the `seo-kit-boilerplate`.
 
+## Important Notice:
+
+Please do not push your code directly to the alexis-mrc/seo-kit-boilerplate repository. Doing so will result in losing access to the repository.
+If you need to contribute, kindly create a merge request and request a review by contacting support@seo-kit.io.
+
+Thank you for your cooperation!
+
 ## Credit
 
 For support, contact: alexis-mrc at support@seo-kit.io

@@ -1,5 +1,6 @@
 import { afterNextRender, DestroyRef, ElementRef, inject, Inject, Renderer2 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { seokWebsiteUrl } from '@seo-kit-boilerplate/seok-generated/settings';
 
 export const addAlternateLangHref = (lang: string, absoluteHref: string) => {
   const document = inject(DOCUMENT)
