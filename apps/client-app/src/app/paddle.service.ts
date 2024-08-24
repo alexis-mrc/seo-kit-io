@@ -44,6 +44,12 @@ export class PaddleService {
     inject(SeokPricesService).priceClicked$.pipe(takeUntilDestroyed()).subscribe(click => {
       const paddle = this.paddle();
       if (paddle) {
+        const username = prompt('Enter the GitHub username to invite after payment:');
+        if (!username) {
+          alert('We need your Github username to send invite.');
+          return;
+        }
+
         paddle.Checkout.open({
           settings: {
             displayMode: "overlay"
@@ -54,7 +60,10 @@ export class PaddleService {
           //   priceId: 'pri_01j24yqqvs0zxhj85dpw69qt5r',
             priceId: 'pri_01j257va7cd99m5fbgchn8hn3k', // TEST
             quantity: 1
-          }]
+          }],
+          customData: {
+            ghUsername: username
+          }
         });
       }
     })
