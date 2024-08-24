@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.6] - 2024-08-24
+
+### Edit
+
+- Update README.md about contribution and editing `alexis-mrc/seo-kit-boilerplate` repository.
+
+### Fix
+
+- Fix `alternate-lang-href.service.ts` to use absolute URL.
+
 ## [1.0.5] - 2024-08-22
 
 ### Add
