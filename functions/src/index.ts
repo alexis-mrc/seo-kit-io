@@ -4,8 +4,8 @@ import * as logger from "firebase-functions/logger";
 import {defineSecret} from "firebase-functions/params";
 import * as https from "https";
 
-const paddleAPIKey = defineSecret("PADDLE_API_KEY_SANDBOX");
-const WEBHOOK_SECRET = defineSecret("WEBHOOK_SECRET_SANDBOX");
+const paddleAPIKey = defineSecret("PADDLE_API_KEY_SANDBOX_PROD");
+const WEBHOOK_SECRET = defineSecret("WEBHOOK_SECRET_SANDBOX_PROD");
 const githubKey = defineSecret("GITHUB_KEY");
 
 

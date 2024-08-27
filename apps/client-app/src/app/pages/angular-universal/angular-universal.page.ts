@@ -6,7 +6,7 @@ export const lang = "en";
 export const state: SeokPageState = "published";
 export const metatags: Metatags = {
     title: "Angular Universal Transition to @angular/ssr since Angular 17",
-    description: "Angular 17 introduces @angular/ssr, evolving from Angular Universal. This update enhances server-side rendering and static site generation, streamlining setup and boosting performance.",
+    description: "Angular Universal is now @angular/ssr. This update enhances server-side rendering and static site generation, streamlining setup and boosting performance.",
     image: "",
     og: {
         type: "",

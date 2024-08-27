@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { setJsonLd } from '@seo-kit-boilerplate/seok-core/json-ld';
 import { addAlternateLangHref, updateMetatags } from '@seo-kit-boilerplate/seok-core/metatags';
 import { setLang } from '@seo-kit-boilerplate/seok-core/lang';
-import { metatags, lang } from './fr-angular-seo.page';
+import { metatags, lang, url as frUrl } from './fr-angular-seo.page';
 import { ImagePresentationComponent } from '@seo-kit-boilerplate/seok-ui';
 import { Highlight } from 'ngx-highlightjs';
 import { RouterLink } from '@angular/router';
@@ -102,7 +102,7 @@ ngOnInit() {
   imageCode = signal('<img ngSrc="cat.jpg" width="400" height="200" priority>');
 
   sitemapCode = signal(`<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://example.com/</loc>
     <lastmod>2024-07-04</lastmod>
@@ -122,6 +122,8 @@ ngOnInit() {
     setLang(lang);
     setJsonLd();
     updateMetatags(metatags);
+    addAlternateLangHref('fr', '/' + frUrl);
     addAlternateLangHref('en', '/' + enUrl);
+    addAlternateLangHref('x-default', '/' + enUrl);
   }
 }

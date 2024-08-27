@@ -5,7 +5,7 @@ export const url = "";
 export const lang = "en";
 export const state: SeokPageState = "published";
 export const metatags: Metatags = {
-    title: "SEO KIT : Build SEO-Optimized Websites quickly for organic traffic",
+    title: "SEO KIT : Build SEO-Optimized Angular app for organic traffic",
     description: "Discover the seo-kit-boilerplate to create SEO-optimized websites effortlessly. Deploy with ease. Start building your high-ranking website today!",
     image: "https://seo-kit.io/logo-seo-kit.svg",
     og: {

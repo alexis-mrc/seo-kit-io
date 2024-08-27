@@ -6,7 +6,7 @@ const path = require('node:path');
 
 export const generateSitemap = (routes: Routes, baseUrl: string, pagesDirname: string): string => {
   const root = create('urlset', {version: '1.0', encoding: 'UTF-8'});
-  root.att('xmlns', 'http://www.sitemaps.org/schemas/sitemap/0.9');
+  root.att('xmlns', 'https://www.sitemaps.org/schemas/sitemap/0.9');
 
   routes.forEach(route => {
     if (route.path !== '*' && route.path !== '**' && (route.path || route.path === '')) {

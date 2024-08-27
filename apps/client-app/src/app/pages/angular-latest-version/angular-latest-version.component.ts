@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { setJsonLd } from '@seo-kit-boilerplate/seok-core/json-ld';
-import { updateMetatags } from '@seo-kit-boilerplate/seok-core/metatags';
+import { addAlternateLangHref, updateMetatags } from '@seo-kit-boilerplate/seok-core/metatags';
 import { setLang } from '@seo-kit-boilerplate/seok-core/lang';
-import { metatags, lang } from './angular-latest-version.page';
+import { metatags, lang, url as enUrl } from './angular-latest-version.page';
 import { ImagePresentationComponent } from '@seo-kit-boilerplate/seok-ui';
 import { RouterLink } from '@angular/router';
 import { url } from '../angular-seo/angular-seo.page';
@@ -24,5 +24,7 @@ export class AngularLatestVersionComponent {
     setLang(lang);
     setJsonLd();
     updateMetatags(metatags);
+    addAlternateLangHref('en', '/' + enUrl);
+    addAlternateLangHref('x-default', '/' + enUrl);
   }
 }

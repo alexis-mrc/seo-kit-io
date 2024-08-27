@@ -21,6 +21,7 @@ export * from './lib/image-presentation/image-presentation.model';
 
 export * from './lib/prices/prices.component';
 export * from './lib/prices/prices.model';
+export * from './lib/prices/prices.service';
 
 export * from './lib/testimonies/testimonies.component';
 export * from './lib/testimonies/testimonies.model';

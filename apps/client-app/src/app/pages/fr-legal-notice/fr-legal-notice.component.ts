@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { setJsonLd } from '@seo-kit-boilerplate/seok-core/json-ld';
 import { addAlternateLangHref, updateMetatags } from '@seo-kit-boilerplate/seok-core/metatags';
 import { setLang } from '@seo-kit-boilerplate/seok-core/lang';
-import { metatags, lang } from './fr-legal-notice.page';
+import { metatags, lang, url as frUrl } from './fr-legal-notice.page';
 import { ImagePresentationComponent } from '@seo-kit-boilerplate/seok-ui';
 import { url as enUrl } from '../legal-notice/legal-notice.page';
 
@@ -20,6 +20,8 @@ export class FrLegalNoticeComponent {
     setLang(lang);
     setJsonLd();
     updateMetatags(metatags);
+    addAlternateLangHref('fr', '/' + frUrl);
     addAlternateLangHref('en', '/' + enUrl);
+    addAlternateLangHref('x-default', '/' + enUrl);
   }
 }

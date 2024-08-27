@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://seo-kit.io/terms-of-service</loc>
-    <lastmod>2024-08-13</lastmod>
+    <lastmod>2024-08-25</lastmod>
   </url>
   <url>
     <loc>https://seo-kit.io/privacy</loc>
-    <lastmod>2024-08-13</lastmod>
+    <lastmod>2024-08-25</lastmod>
   </url>
   <url>
     <loc>https://seo-kit.io/legal-notice</loc>
-    <lastmod>2024-08-13</lastmod>
+    <lastmod>2024-08-25</lastmod>
   </url>
   <url>
     <loc>https://seo-kit.io/fr/terms-of-service</loc>
-    <lastmod>2024-08-13</lastmod>
+    <lastmod>2024-08-25</lastmod>
   </url>
   <url>
     <loc>https://seo-kit.io/fr/privacy</loc>
-    <lastmod>2024-08-13</lastmod>
+    <lastmod>2024-08-25</lastmod>
   </url>
   <url>
     <loc>https://seo-kit.io/fr/legal-notice</loc>
-    <lastmod>2024-08-13</lastmod>
+    <lastmod>2024-08-25</lastmod>
   </url>
   <url>
     <loc>https://seo-kit.io/fr/angular-seo</loc>
-    <lastmod>2024-08-21</lastmod>
+    <lastmod>2024-08-25</lastmod>
   </url>
   <url>
     <loc>https://seo-kit.io/fr</loc>
-    <lastmod>2024-08-18</lastmod>
+    <lastmod>2024-08-25</lastmod>
   </url>
   <url>
     <loc>https://seo-kit.io/angular-universal</loc>
@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://seo-kit.io/angular-seo</loc>
-    <lastmod>2024-08-17</lastmod>
+    <lastmod>2024-08-25</lastmod>
   </url>
   <url>
     <loc>https://seo-kit.io/angular-latest-version</loc>
@@ -46,6 +46,6 @@
   </url>
   <url>
     <loc>https://seo-kit.io/</loc>
-    <lastmod>2024-08-18</lastmod>
+    <lastmod>2024-08-25</lastmod>
   </url>
 </urlset>
